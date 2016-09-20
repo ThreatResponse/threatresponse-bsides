@@ -12,6 +12,11 @@ Andrew Krug & Alex McCormack
 
 @andrewkrug   @amccomarck
 
+----------------
+
+Before we get started
+=======================
+
 -----------------
 
 About Us
@@ -37,23 +42,54 @@ This year in AWS Security
 BlackHat 2016 Talks
 ===========================
 
-* ACCOUNT JUMPING, POST INFECTION PERSISTENCY & LATERAL MOVEMENT IN AWS
-  Dan Amiga & Dor Knafo
+-----------------
 
-* ACCESS KEYS WILL KILL YOU BEFORE YOU KILL THE PASSWORD
-  Loic Simon
+Account Jumping, Post Infection Persistence, and Lateral Movement in AWS
+==========================================================================
 
-* HARDENING AWS ENVIRONMENTS AND AUTOMATING INCIDENT RESPONSE FOR AWS COMPROMISES
-  Andrew Krug & Alex McCormack
+Dan Amiga and Dor Knafo
+------------------------
+
+.. image:: static/fireglass.png
+   :align: center
+
+http://ubm.io/2dfeStx
+
 
 -----------------
+
+Access Keys will kill you before you kill the password
+=======================================================
+
+Loic Simon
+----------
+
+.. image:: static/bh2016.png
+   :align: center
+
+http://ubm.io/2czdg9S
+
+-----------------
+
+Us of Course!
+========================
+
+
+Hint : You're in this talk.
+----------------------------
+
+.. image:: static/awsir.jpg
+   :align: center
+
+http://www.threatresponse.cloud
+
+------------------
 
 Significant Blogs
 ===========================
 
-show daniel grz... stuff
-
-why is everybody talking about it
+.. image:: static/danielgrzelak.png
+   :align: center
 
 -----------------
 
@@ -94,12 +130,29 @@ The AWS Security ECO System
 
 -----------------
 
+Attack Time!
+==============================
+
+Trivia Question
+----------------
+
+Who Said: "Defense without Offense is after all just Compliance."
+
+---------------------------
+
+A: "Dan Kaminsky in Read My Lips: Let’s Kill 0Day"
+
+.. image:: static/kaminsky.jpg
+   :align: center
+
+-----------------------------
+
 Attack Scenario
 =============================
 
 Imagine .... once upon a time
 
------------------
+-----------------------------
 
 Attack Retrospective
 =============================
@@ -108,6 +161,9 @@ Attack Retrospective
 
 What is ThreatResponse?
 =============================
+
+.. image:: static/tool-release.png
+    :align: center
 
 ------------------------------
 
@@ -134,6 +190,22 @@ AWS Advanced Attacks
 * _New_ Super Cool API Gateway Persistence
 
 ------------------------------
+
+Why make a backdoor tool?
+==============================
+
+Trivia Question
+----------------
+
+Who Said: "It was once my job to think as Dark Wizards do?"
+
+-----------------------------
+
+A: "Mad Eye Moody"
+
+.. image:: static/moody.gif
+
+-----------------------------
 
 Mad King Demo
 =================================

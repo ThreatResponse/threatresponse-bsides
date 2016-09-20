@@ -115,9 +115,15 @@ th p {
     margin: 0;
 }
 
+
 /* title slide */
 #step-1 {
     text-align: center;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
 }
 
 /* for mobile browsers and others that don't support CSS 3D transforms */
@@ -144,6 +150,3 @@ th p {
         width: 200%;
     }
 }
-
-
-
