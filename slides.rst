@@ -17,10 +17,18 @@ Andrew Krug & Alex McCormack
 Before we get started
 =======================
 
+.. image:: static/pwnie.png
+
+ImageCredit: OddDuckart
+
+http://bit.ly/2cl6qJ2
+
 -----------------
 
 About Us
 ==========
+
+.. image:: static/team.png
 
 -----------------
 
