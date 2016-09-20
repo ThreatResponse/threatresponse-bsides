@@ -1,4 +1,19 @@
 
+Hardening AWS Environments
+==============================================================================
+
+and
+===
+
+Automating Incident Response
+===============================
+
+Andrew Krug & Alex McCormack
+
+@andrewkrug   @amccomarck
+
+-----------------
+
 Margarita Shotgun
 =================
 
@@ -83,5 +98,3 @@ Potato is life
 .. image:: static/infinitater.png
 
 Potato is love
-
-

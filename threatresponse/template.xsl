@@ -43,13 +43,13 @@ xmlns="http://www.w3.org/1999/xhtml">
         </xsl:attribute>
       </meta>
     </xsl:if>
-    
+
     <xsl:for-each select="/document/templateinfo/header/css">
       <link rel="stylesheet">
         <xsl:copy-of select="@*"/>
       </link>
     </xsl:for-each>
-    
+
     <xsl:if test="/document/@pygments">
         <link rel="stylesheet" media="all">
             <xsl:attribute name="href">css/pygments/<xsl:value-of select="/document/@pygments" />.css</xsl:attribute>
@@ -69,7 +69,7 @@ xmlns="http://www.w3.org/1999/xhtml">
   <body class="impress-not-supported">
     <div id="fixed-header" class="fixed-header">
       <img class="nav-icon" title="" alt="Threat Response Logo" src="static/tr_logo.png" />
-      <h1 class="nav-title">Threat Response - Margarita Shotgun</h1>
+      <h1 class="nav-title">ThreatResponse @ DerbyCon Recharge</h1>
     </div>
     <div class="slides">
       <xsl:for-each select="/document">
@@ -90,10 +90,10 @@ xmlns="http://www.w3.org/1999/xhtml">
               <xsl:apply-templates />
             </div>
           </xsl:for-each>
-        </div> 
+        </div>
       </xsl:for-each>
     </div>
-    
+
     <div id="hovercraft-help">
       <xsl:if test="/document/@skip-help">
         <xsl:attribute name="class">hide</xsl:attribute>
@@ -111,7 +111,7 @@ xmlns="http://www.w3.org/1999/xhtml">
         <xsl:copy-of select="@*"/>
       </script>
     </xsl:for-each>
-  
+
 </body>
 </html>
 </xsl:template>
