@@ -32,6 +32,21 @@ About Us
 
 -----------------
 
+Important Things
+==================
+
+* We are not a corporation
+* No one pays us to do this
+* Everything we're going to talk about is FOSS
+
+Other important things
+-----------------------
+
+* We all have day jobs on the ThreatResponse Team
+* These are our opinions not the opinion of our employer.
+
+-----------------
+
 Why AWS Incident Response
 ============================
 
@@ -218,6 +233,8 @@ A: "Mad Eye Moody"
 Mad King Demo
 =================================
 
+.. image:: static/madking.png
+
 ------------------------------
 
 So what?
@@ -230,8 +247,11 @@ How do we even begin to protect ourselves?
 
 ------------------------------
 
-No less than Three Dumb Clouds
+No less than:
 ===========================================
+
+Three Dumb Clouds
+------------------
 
 ------------------------------
 
@@ -257,6 +277,13 @@ Future Features of Our Tools
 
 Thank Yous and Announcements
 ==========================================
+
+* Amazon Web Services Security
+      Don Bailey, Henrik Johansson, Zack Glick
+* DerbyCon Staff
+* Toni De la Fuente
+* Team Who Couldn't Be with Us Today
+
 
 ------------------------------
 
