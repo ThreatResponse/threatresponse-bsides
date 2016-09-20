@@ -14,87 +14,176 @@ Andrew Krug & Alex McCormack
 
 -----------------
 
-Margarita Shotgun
+About Us
+==========
+
+-----------------
+
+Why AWS Incident Response
+============================
+
+-----------------
+
+So what?
+=========
+
+-----------------
+
+This year in AWS Security
+===========================
+
+-----------------
+
+BlackHat 2016 Talks
+===========================
+
+* ACCOUNT JUMPING, POST INFECTION PERSISTENCY & LATERAL MOVEMENT IN AWS
+  Dan Amiga & Dor Knafo
+
+* ACCESS KEYS WILL KILL YOU BEFORE YOU KILL THE PASSWORD
+  Loic Simon
+
+* HARDENING AWS ENVIRONMENTS AND AUTOMATING INCIDENT RESPONSE FOR AWS COMPROMISES
+  Andrew Krug & Alex McCormack
+
+-----------------
+
+Significant Blogs
+===========================
+
+show daniel grz... stuff
+
+why is everybody talking about it
+
+-----------------
+
+Things we're gonna do!
+===============================
+
+1. Examine Attacks Against AWS Accounts
+2. Show you the ThreatResponse Toolkit
+3. Talk about other OSS Project
+4. Release a new type of attack tool
+
+( not necessarily in that order )
+
+-----------------
+
+Common Types of Attacks
+=================================
+
+1. Host Based Compromise
+2. Key Based Compromise
+
+( this is where we talk about access keys will kill you before you kill the password )
+
+-----------------
+
+HC
 =================
 
 -----------------
 
-Code Block
-==========
+KC
+=================
 
-some header
------------
+-----------------
 
-.. code-block:: python
+The AWS Security ECO System
+=============================
 
-   >>> from potato import potato
-   >>> potates = potato(potato=True)
-   >>> potates.potato()
-   potato potato potato potato potato potato potato
-   potato potato potato potato potato potato potato
-   potato potato potato potato potato potato potato
-   potato potato potato potato potato potato potato
-   potato potato potato potato potato potato potato
-   potato potato potato potato potato potato potato
+-----------------
 
-------
+Attack Scenario
+=============================
 
-Only Text
-=========
+Imagine .... once upon a time
 
-Lorem *ipsum* **dolor** sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+-----------------
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Attack Retrospective
+=============================
 
-- Lorem
-- ipsum
-- dolor
+-----------------
 
----------
+What is ThreatResponse?
+=============================
 
-Potato Matrix
-=============
+------------------------------
 
-+--------+--------+--------------------+
-| Potato | potato | Header             |
-+========+========+====================+
-| - yes  | this potato is multi column |
-+ - yes  +--------+--------------------+
-| - no   | yes    | no                 |
-+--------+--------+--------------------+
-| **no** | yes    | no                 |
-+--------+--------+--------------------+
+ThreatResponse in Action
+================================
 
--------------
+------------------------------
 
-Asciinema Player
-================
+What just happened?
+================================
 
-.. raw:: html
+------------------------------
 
-   <div id="player-container"></div>
-   <script>
-     asciinema.player.js.CreatePlayer('player-container', 'casts/asciicast.json');
-   </script>
+So what?
+==============================
 
+------------------------------
 
-----------------
+AWS Advanced Attacks
+================================
 
-Image Only Slide
-================
+* Logging Disruption
+* STS Persistence
+* _New_ Super Cool API Gateway Persistence
 
-.. image:: static/infinitater.png
+------------------------------
 
-----------------
+Mad King Demo
+=================================
 
-.. image:: static/infinitater.png
+------------------------------
 
-----------------
+So what?
+=================================
 
-Potato is life
-==============
+------------------------------
 
-.. image:: static/infinitater.png
+How do we even begin to protect ourselves?
+===========================================
 
-Potato is love
+------------------------------
+
+No less than Three Dumb Clouds
+===========================================
+
+------------------------------
+
+Other Projects
+===========================================
+
+------------------------------
+
+Project Comparison
+===========================================
+
+------------------------------
+
+Want more information?
+==========================================
+
+------------------------------
+
+Future Features of Our Tools
+==========================================
+
+------------------------------
+
+Thank Yous and Announcements
+==========================================
+
+------------------------------
+
+Don't let me forget to take questions...
+==========================================
+
+------------------------------
+
+Srsly any questions? ...
+==========================================
