@@ -230,7 +230,29 @@ Ever heard of the metadata service?
 Winning!
 ================================
 
+-----------------
 
+So what?
+===============
+
+You can protect against this
+--------------------------------
+
+Good old iptables to the rescue.
+
+.. code-block:: bash
+
+    iptables -A OUTPUT -m owner ! —uid-owner root -d 169.254.169.254 -j DROP
+
+-----------------
+
+Assuming you didn't though!
+==============================
+
+What do you do?
+------------------------
+
+.. image:: static/bad-day.jpg
 
 -----------------
 
