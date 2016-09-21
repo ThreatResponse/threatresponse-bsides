@@ -210,9 +210,130 @@ AWS Advanced Attacks
 
 * Logging Disruption
 * STS Persistence
-* _New_ Super Cool API Gateway Persistence
+* *New* Super Cool API Gateway Persistence
 
 ------------------------------
+
+PSA : GroundRules
+=============================
+
+.. image:: static/boring.jpg
+    :align: center
+
+Non-Boring Material Ahead!
+----------------------------
+
+------------------------------
+
+Logging Disruption
+===============================================
+
+Three Variations of This
+---------------------------
+
+1. Just Stop Trail - Boring
+2. Stop Regional Logging or Global Logging - Less Boring
+3. Make CloudTrail operate but logs are unreadable - Best!!
+
+------------------------------
+
+The Cool Attack
+======================================
+
+This is your CloudTrail
+------------------------------------
+
+.. image:: static/normalcloudtrail.png
+    :align: center
+
+
+------------------------------
+
+**This is your CloudTrail on Crypto**
+
+
+.. image:: static/badcloudtrail.png
+    :align: center
+
+----------------------------------
+
+When the attack happens...
+==============================================
+
+.. image:: static/moneyfire.jpg
+    :align: center
+
+The “bypass-policy-lockout-safety-check” flag allows you the make the key’s
+policy immutable after creation, making logging just an exercise in lighting
+money on fire with disk consumption. You can’t say Amazon didn’t warn you!
+- @danielgrzelak
+
+
+----------------------------------
+
+.. image:: static/sowhat.png
+    :align: center
+
+1. Requires a high level of privilege
+2. Handy for remaining undetected
+3. Not necessarily undetectable...
+
+----------------------------------
+
+Not Normal Activities Here
+==============================
+
+.. image:: static/moon.gif
+    :align: center
+
+1. Creating KMS Keys with this weird policy
+2. Calling update trail on your cloudtrail
+
+----------------------------------
+
+http://bit.ly/2cnpTsK
+=================================
+
+There's an article about this type of detection.
+----------------------------------------------------
+
+.. image:: static/doda.png
+    :align: center
+
+----------------------------------
+
+CloudWatch Event Pipelines
+=========================================
+
+For the win
+-------------------
+
+.. image:: static/cloudwatch.png
+    :align: center
+
+----------------------------------
+
+
+Video of CloudWatch Pipeline
+================================
+
+.. raw:: html
+
+    <video width="824" height="376" controls>
+      <source src="videos/advcloudtrail.webm">
+    Your browser does not support the video tag.
+    </video>
+
+----------------------------------
+
+STS Attacks
+======================================
+
+.. image:: static/sts.png
+    :align: center
+
+----------------------------------
+
 
 Why make a backdoor tool?
 ==============================
