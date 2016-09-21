@@ -50,10 +50,15 @@ Other important things
 Why AWS Incident Response
 ============================
 
+.. image:: static/why.jpg
+   :align: center
+
 -----------------
 
-So what?
-=========
+.. image:: static/sowhat2.jpg
+   :align: center
+
+
 
 -----------------
 
@@ -141,15 +146,39 @@ Common Types of Attacks
 HC
 =================
 
+.. image:: static/hc.png
+   :align: center
+
+-----------------
+
+KC
+=============
+
+.. image:: static/kc-cropped.png
+   :align: center
+
 -----------------
 
 KC
 =================
 
------------------
+.. image:: static/kc.png
+   :align: center
+
+-----------------------------
 
 The AWS Security ECO System
 =============================
+
+Basically all you need is:
+
+1. Word about a Cloud
+2. Action or a Place
+3. ( Optional a thing to operate on )
+
+You too can make Product Madlibs
+--------------------------------
+
 
 -----------------
 
@@ -202,6 +231,9 @@ What just happened?
 
 So what?
 ==============================
+
+.. image:: static/projects.png
+    :align: center
 
 ------------------------------
 
@@ -358,8 +390,60 @@ Mad King Demo
 
 ------------------------------
 
+Just Imagine
+============================
+
+.. image:: static/story1.jpg
+
+You're working in the magical land of Cosnovion.
+
+
+------------------------------
+
+Then bad things happen
+============================
+
+.. image:: static/story2.jpg
+
+One of your developers leaks a super privileged access key...
+
+------------------------------
+
+Then bad things happen
+============================
+
+.. image:: static/story3.jpg
+
+They said give us some money or else.  Boss asks you to clean the account.
+And you do! You even revoked STS Tokens!
+
+
+-------------------------------
+
+Attackers end your company
+============================
+
+.. image:: static/story4.jpg
+
+Attackers end your company through a super cool new type of persistence.
+
+--------------------------------
+
+Fin
+============================
+
+.. image:: static/story5.jpg
+
+The End
+
+
+--------------------------------
+
 So what?
 =================================
+
+Let's look at the MadKing
+--------------------------
 
 ------------------------------
 
@@ -374,7 +458,12 @@ No less than:
 Three Dumb Clouds
 ------------------
 
-------------------------------
+.. image:: static/dev-in-aws.png
+    :align: center
+
+Is this three dumb clouds?
+
+--------------
 
 Other Projects
 ===========================================
@@ -384,15 +473,27 @@ Other Projects
 Project Comparison
 ===========================================
 
+.. image:: static/comparison.png
+    :align: center
+
+
 ------------------------------
 
 Want more information?
 ==========================================
 
+Subscribe to our mailing list
+--------------------------------
+
+http://www.threatresponse.cloud
+
 ------------------------------
 
 Future Features of Our Tools
 ==========================================
+
+.. image:: static/features.png
+    :align: center
 
 ------------------------------
 
