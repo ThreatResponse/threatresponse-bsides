@@ -479,6 +479,164 @@ STS Attacks
 
 ----------------------------------
 
+How do they happen?
+=====================================
+
+1. Metadata Compromise
+2. As a result of key compromise
+3. Leaked through an application running in a role
+
+----------------------------------
+
+How do you generate them?
+=======================================
+
+.. code-block:: bash
+
+    kali:$ aws sts get-session-token --duration-seconds 129600
+
+---------------------------------
+
+What you get back
+==========================
+
+.. code-block:: bash
+
+    {
+        "Credentials": {
+            "SecretAccessKey": "S/aDDL86juKF3*****************************",
+            "SessionToken": "FQoDYXdzEG***********************************",
+            "Expiration": "2016-09-23T05:26:51Z",
+            "AccessKeyId": "ASIAJ5*****************************"
+        }
+    }
+
+---------------------------------
+
+So what?
+==================================
+
+1. You can't revoke temporary STS tokens
+2. Without CloudTrail you have no way to know how many exist
+3. Someone can use these to end you
+
+
+--------------------------------
+
+Companies have ceased to be.
+==================================
+
+.. image:: static/ars.png
+    :align: center
+
+--------------------------------
+
+Trust is hard to gain!
+============================================
+
+Easy to lose.
+---------------------------------
+
+--------------------------------
+
+
+How do you
+=================================
+
+defend against STS?
+=====================
+
+--------------------------------
+
+
+You don't.
+=============
+
+--------------------------------
+
+J/K
+=======================
+
+.. image:: static/disable-sts.png
+    :align: center
+
+-------------------------------
+
+Three Supported Techniques
+=================================
+
+1. Denying Access to the Creator
+2. Denying Access to by Name
+
+3. **Denying Access to Credentials
+Issued Before xx/xx/xx 00:00:00**
+
+-------------------------------
+
+Time Based Revocation
+====================================
+
+.. code-block:: bash
+
+    {
+      "Version": "2012-10-17",
+      "Statement": {
+        "Effect": "Deny",
+        "Action": "*",
+        "Resource": "*",
+        "Condition": {"DateLessThan": {"aws:TokenIssueTime": "2014-05-07T23:47:00Z"}}
+      }
+    }
+
+1 and done policy attach to all roles
+---------------------------------------
+
+--------------------------------
+
+Go defend!
+==================
+
+.. image:: static/yoda.jpg
+
+
+--------------------------------
+
+Backdoors via API Gateway!
+==========================================
+
+.. image:: static/apigw.jpg
+
+--------------------------------
+
+Serverless is the Future
+============================
+
+I agree!
+-------------------
+
+--------------------------------
+
+Serverless is the future!
+====================================
+
+Of attacks!
+=======================
+
+--------------------------------
+
+What could you do with serverless attacks?
+============================================
+
+1. Backdoors
+2. Exfiltrate data via http
+3. Run a CNC for BotNet
+4. Run a ransomware backend....
+
+
+Endless Possibility
+----------------------
+
+--------------------------------
 
 Why make a backdoor tool?
 ==============================
@@ -489,6 +647,13 @@ Trivia Question
 Who Said: "It was once my job to think as Dark Wizards do?"
 
 -----------------------------
+
+.. code-block:: bash
+
+    Professor Moody: The Goblet of Fire is an exceptionally powerful magical object.
+    Only an exceptionally powerful Confundus charm could have hoodwinked it!
+    Magic way beyond the talents of a fourth year.
+    Igor Karkaroff: You seem to have given this a fair bit of thought, Mad-Eye!
 
 A: "Mad Eye Moody"
 
@@ -560,6 +725,45 @@ Let's look at the MadKing
 
 ------------------------------
 
+.. raw:: html
+
+    <div id="player-container"></div>
+    <script>
+      asciinema.player.js.CreatePlayer('player-container', 'casts/mad-king.json',
+      {
+        speed : 5,
+      }
+      );
+    </script>
+
+-------------------------------
+
+.. raw:: html
+
+    <video width="824" height="376" controls>
+      <source src="videos/madking.webm">
+    Your browser does not support the video tag.
+    </video>
+
+
+-------------------------------
+
+Did we just burn them all?
+===================================
+
+-------------------------------
+
+So what?
+==================
+
+1. Small payload
+2. Gives you persistence
+3. Cleans up it's own logs when it goes away
+4. Most platforms probably aren't auditing serverless
+5. No security groups for APIGateway endpoints
+
+-------------------------------
+
 How do we even begin to protect ourselves?
 ===========================================
 
@@ -578,8 +782,28 @@ Is this three dumb clouds?
 
 --------------
 
+Nah... this is three dumb clouds
+===================================
+
+.. image:: static/seperated-envs.png
+    :align: center
+
+--------------
+
+Maybe we need four clouds
+============================
+
+.. image:: static/securitycloud.jpg
+    :align: center
+
+--------------
+
 Other Projects
 ===========================================
+
+* Security Monkey
+* Cloud Custodian
+* Prowler -- *new*
 
 ------------------------------
 
@@ -589,6 +813,59 @@ Project Comparison
 .. image:: static/comparison.png
     :align: center
 
+------------------------------
+
+Security Monkey
+=============================
+
+Security Monkey : http://bit.ly/2cmMQaI
+
+**What we love about it!**
+
+* It's Django
+* Docker Container Support
+* Tracks item states over time
+* Security Scorecards your account
+* Can run in a bastion
+
+------------------------------
+
+CloudCustodian
+=============================
+
+Cloud Custodian : https://github.com/capitalone/cloud-custodian
+
+**What we love about it!**
+
+* Rule Based Approach
+* Has dry run
+* Can run on premise or in another account
+* It solves real compliance problems that you have
+
+------------------------------
+
+Prowler
+====================
+
+.. image:: static/prowler.png
+    :align: center
+
+
+------------------------------
+
+Prowler
+====================
+
+By our friend Toni De La Fuente
+
+Prowler : https://github.com/toniblyx/aws-cis-security-benchmark
+
+**What we love about it!**
+
+* CIS Benchmarking Tool
+* Can run out of your cloud
+* Meaningful report data
+* Actionable changes
 
 ------------------------------
 
@@ -617,6 +894,7 @@ Thank Yous and Announcements
       Don Bailey, Henrik Johansson, Zack Glick
 * DerbyCon Staff
 * Toni De la Fuente
+* Shyla Roach - Illustrations in slides
 * Team Who Couldn't Be with Us Today
 
 
