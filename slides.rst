@@ -725,8 +725,6 @@ Host Compromise
 
  4. Profit!
 
-.. note::
-  TODO - Doesn't this prevent STS from working?
 
 -----------------
 
