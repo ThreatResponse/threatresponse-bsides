@@ -335,8 +335,16 @@ IR in AWS: Prep - Hardening
 `Scout2 <https://github.com/nccgroup/Scout2>`_
 -------------------------------------------------------------------------------
 
- TODO
+.. image:: static/scout2-dashboard2.png
+    :align: center
+    :width: 840px
 
+.. note::
+  By NCC Group. 63 rules. Easy to add your own.
+
+  Dead simple to use. Good Error Handling.
+
+  Simple Reporting.
 
 ------
 
@@ -383,7 +391,7 @@ Which tool should use use?
 Implement Something Immediately
 --------------------------------
 
- * Start with simple tools like Prowler
+ * Start with simple tools like Prowler or Scout2
  * Move on to more complex tools as needed.
 
 ------------------------------
@@ -431,9 +439,7 @@ Access Advisor
 IR in AWS: Prep - Hardening
 ======================================
 
-`Policy Tuning with CloudTrail <http://threatresponse.cloud/blog/2016/tips_for_least_privilege_iam_policies.html>`_
--------------------------------------------------------------------------------------------------------------------------------
-
+Blog Post: `Policy Tuning with CloudTrail <http://threatresponse.cloud/blog/2016/tips_for_least_privilege_iam_policies.html>`_
 
 .. code-block:: bash
 
@@ -468,7 +474,14 @@ IR in AWS: Prep - Hardening
 Practice
 -------------------------------
 
-TODO
+* Have a test environment
+* Security simulations & IR Game Days
+
+ * `AWS re:Invent 2015 | (SEC316) Harden Your Architecture w/ Security Incident Response Simulations <https://www.youtube.com/watch?v=u-mRU44Q5u4>`_
+
+* **Note**: Tell Amazon before you practice
+
+ * https://aws.amazon.com/security/penetration-testing/
 
 ------------------------------
 
