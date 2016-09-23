@@ -80,23 +80,50 @@ Today's Agenda
 What's going on in AWS Security: Blog Posts
 ===========================================
 
- - `Daniel Grezelak <http://danielgrzelak.com>`_
 
-  - `Backdooring an AWS account <https://danielgrzelak.com/backdooring-an-aws-account-da007d36f8f9>`_
+Daniel Grezelak
+----------------------------------------------
 
-  - `Exploring an AWS account post-compromise <https://danielgrzelak.com/exploring-an-aws-account-after-pwning-it-ff629c2aae39?source=latest>`_
+ - `Backdooring an AWS account <https://danielgrzelak.com/backdooring-an-aws-account-da007d36f8f9>`_
 
-  - `Disrupting AWS logging <https://danielgrzelak.com/disrupting-aws-logging-a42e437d6594?source=latest>`_
+ - `Exploring an AWS account post-compromise <https://danielgrzelak.com/exploring-an-aws-account-after-pwning-it-ff629c2aae39?source=latest>`_
 
- - `Toni de la Fuente <http://blyx.com/>`_
+ - `Disrupting AWS logging <https://danielgrzelak.com/disrupting-aws-logging-a42e437d6594?source=latest>`_
 
-  - `Cloud Forensics: CAINE7 on AWS <http://blyx.com/2016/06/16/cloud-forensics-caine7-on-aws/>`_
 
-  - `Forensics in AWS: an introduction <http://blyx.com/2016/03/11/forensics-in-aws-an-introduction/>`_
 
- - `Eric Hammond <https://alestic.com/>`_
- 
-  - `AWS IAM "ReadOnlyAccess" Managed Policy is Too Permissive (For Us) <https://alestic.com/2015/10/aws-iam-readonly-too-permissive/>`_
+Toni de la Fuente
+----------------------------------------------
+ - `Cloud Forensics: CAINE7 on AWS <http://blyx.com/2016/06/16/cloud-forensics-caine7-on-aws/>`_
+
+ - `Forensics in AWS: an introduction <http://blyx.com/2016/03/11/forensics-in-aws-an-introduction/>`_
+
+Eric Hammond
+----------------------------------------------
+
+ - `AWS IAM "ReadOnlyAccess" Managed Policy is Too Permissive (For Us) <https://alestic.com/2015/10/aws-iam-readonly-too-permissive/>`_
+
+.. note:: Andrew Speaks
+
+-----
+
+What's going on in AWS Security: Blackhat Talks
+===============================================
+
+Dan Amiga and Don Knafo
+----------------------------------------------
+
+ - `Account Jumping, Post Infection Persistence, and Lateral Movement in AWS <http://ubm.io/2dfeStx>`_
+
+Loic Simon
+----------------------------------------------
+
+ - `Access Keys will kill you before you kill the password <http://ubm.io/2czdg9S>`_
+
+This Talk, v1
+---------------
+
+ - `Hardening AWS Environments and Automating Incident Response for AWS Compromises <https://s3-us-west-2.amazonaws.com/threatresponse-static/us-16-Krug-Hardening-AWS-Environments-and-Automating-Incident-Response-for-AWS-Compromises-wp.pdf>`_
 
 .. note:: Andrew Speaks
 
@@ -117,76 +144,6 @@ Why AWS Incident Response
 
 -----------------
 
-This year in AWS Security
-===========================
-
------------------
-
-BlackHat 2016 Talks
-===========================
-
------------------
-
-Account Jumping, Post Infection Persistence, and Lateral Movement in AWS
-==========================================================================
-
-Dan Amiga and Dor Knafo
-------------------------
-
-.. image:: static/fireglass.png
-   :align: center
-
-http://ubm.io/2dfeStx
-
-
------------------
-
-Access Keys will kill you before you kill the password
-=======================================================
-
-Loic Simon
-----------
-
-.. image:: static/bh2016.png
-   :align: center
-
-http://ubm.io/2czdg9S
-
------------------
-
-Us of Course!
-========================
-
-
-Hint : You're in this talk.
-----------------------------
-
-.. image:: static/awsir.jpg
-   :align: center
-
-http://www.threatresponse.cloud
-
-------------------
-
-Significant Blogs
-===========================
-
-.. image:: static/danielgrzelak.png
-   :align: center
-
------------------
-
-Things we're gonna do!
-===============================
-
-1. Examine Attacks Against AWS Accounts
-2. Show you the ThreatResponse Toolkit
-3. Talk about other OSS Project
-4. Release a new type of attack tool
-
-( not necessarily in that order )
-
------------------
 
 Common Types of Attacks
 =================================
