@@ -243,7 +243,7 @@ Best Practices Auditing
 
  - `AWS Config / Config Rules <https://aws.amazon.com/config/>`_
 
- - `Prowler <https://github.com/toniblyx/aws-cis-security-benchmark>`_
+ - `Prowler <https://github.com/Alfresco/aws-cis-security-benchmark>`_
 
  - `Scout2 <https://github.com/nccgroup/Scout2>`_
 
@@ -310,7 +310,7 @@ IR in AWS: Prep - Hardening
 IR in AWS: Prep - Hardening
 ======================================
 
-`Prowler <https://github.com/toniblyx/aws-cis-security-benchmark>`_
+`Prowler <https://github.com/Alfresco/aws-cis-security-benchmark>`_
 -------------------------------------------------------------------------------
 
 .. image:: static/prowler.png
@@ -398,7 +398,7 @@ Best Practices Auditing
 
  - `AWS Config / Config Rules <https://aws.amazon.com/config/>`_
 
- - `Prowler <https://github.com/toniblyx/aws-cis-security-benchmark>`_
+ - `Prowler <https://github.com/Alfresco/aws-cis-security-benchmark>`_
 
  - `Scout2 <https://github.com/nccgroup/Scout2>`_
 
