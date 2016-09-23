@@ -12,6 +12,8 @@ Andrew Krug & Alex McCormack
 
 @andrewkrug   @amccomarck
 
+.. note:: Andrew Speaks
+
 ----------------
 
 Before we get started
@@ -23,12 +25,16 @@ ImageCredit: OddDuckart
 
 http://bit.ly/2cl6qJ2
 
+.. note:: Andrew Speaks
+
 -----------------
 
 About Us
 ==========
 
 .. image:: static/team.png
+
+.. note:: Andrew Speaks
 
 -----------------
 
@@ -45,7 +51,56 @@ Other important things
 * We all have day jobs on the ThreatResponse Team
 * These are our opinions not the opinion of our employer.
 
+.. note:: Andrew Speaks
+
 -----------------
+
+Download the Slides
+===================
+
+* http://threatresponse.cloud
+* http://threatresponse.cloud/derbycon
+
+.. note::  Andrew Speaks
+
+-------------------
+
+Today's Agenda
+===============
+
+ - AWS Developments in the Last Year
+ - Incident Response within AWS
+ - Advanced Attacks and Defenses in AWS
+ - Final Tips & Resources
+
+.. note:: Alex Speaks
+
+-------------------------
+
+What's going on in AWS Security: Blog Posts
+===========================================
+
+ - `Daniel Grezelak <http://danielgrzelak.com>`_
+
+  - `Backdooring an AWS account <https://danielgrzelak.com/backdooring-an-aws-account-da007d36f8f9>`_
+
+  - `Exploring an AWS account post-compromise <https://danielgrzelak.com/exploring-an-aws-account-after-pwning-it-ff629c2aae39?source=latest>`_
+
+  - `Disrupting AWS logging <https://danielgrzelak.com/disrupting-aws-logging-a42e437d6594?source=latest>`_
+
+ - `Toni de la Fuente <http://blyx.com/>`_
+
+  - `Cloud Forensics: CAINE7 on AWS <http://blyx.com/2016/06/16/cloud-forensics-caine7-on-aws/>`_
+
+  - `Forensics in AWS: an introduction <http://blyx.com/2016/03/11/forensics-in-aws-an-introduction/>`_
+
+ - `Eric Hammond <https://alestic.com/>`_
+ 
+  - `AWS IAM "ReadOnlyAccess" Managed Policy is Too Permissive (For Us) <https://alestic.com/2015/10/aws-iam-readonly-too-permissive/>`_
+
+.. note:: Andrew Speaks
+
+-----
 
 Why AWS Incident Response
 ============================
