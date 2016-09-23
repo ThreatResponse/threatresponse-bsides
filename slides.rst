@@ -712,6 +712,24 @@ Good old iptables to the rescue.
 
 -----------------
 
+Key Compromise leads to
+=========================
+Host Compromise
+==================================
+
+ 1. Snapshot Disk for Targeted Host
+
+ 2. Mount Snapshot onto attacker-controlled image
+
+ 3. ???
+
+ 4. Profit!
+
+.. note::
+  TODO - Doesn't this prevent STS from working?
+
+-----------------
+
 Today's Agenda
 ===============
 
@@ -728,6 +746,183 @@ AWS Developments in the Last Year
 
 Advanced Attacks and Defenses in AWS
 -------------------------------------
+
+Final Tips & Resources
+-------------------------------------
+
+.. note:: Alex Speaks
+
+-------------------------
+
+IR in AWS: Eradication
+=======================
+
+ .. raw:: html
+
+     <div id="player-container"></div>
+     <script>
+       asciinema.player.js.CreatePlayer('player-container',
+        'casts/host.json',
+       {
+         speed : 5,
+       }
+       );
+     </script>
+
+----
+
+IR in AWS: Eradication
+=======================
+
+Evidence Data to Collect
+---------------------------
+
+ 1. AWS Data
+ 2. Disk
+ 3. Memory
+ 4. Network
+
+And store in a case specific S3 bucket
+-----------------------------------------
+
+----
+
+IR in AWS: Eradication
+=======================
+
+Evidence Data to Collect: AWS Data
+-----------------------------------------
+
+ 1. EC2 Console Output
+ 2. EC2 Console Screenshot
+ 3. AWS Meta-Data
+
+  - Attached Device Volume IDs
+  - Network Devices and Local / Public IPs
+  - AMI-ID
+
+ 4. Relevant CloudTrail Logs
+
+  - Coming soon to aws_ir
+
+----
+
+Analyze Evidence: EC2 Disks
+=====================================
+
+Snapshot attached disks.
+
+Analyze with ThreatResponse Workstation.
+
+.. image:: static/analyze-disk.png
+    :width: 840px
+
+----
+
+Analyze Evidence: EC2 Disks
+=====================================
+
+
+.. image:: static/disk-processing2.svg
+    :width: 840px
+
+----
+
+Analyze Evidence: EC2 Disks
+=====================================
+
+`TimeSketch <https://github.com/google/timesketch>`_
+
+.. image:: static/timesketch.png
+    :width: 840px
+
+----
+
+IR in AWS: Eradication
+=======================
+
+Evidence Data to Collect: Memory
+-----------------------------------------
+
+`Margarita Shotgun <https://github.com/ThreatResponse/margaritashotgun>`_
+---------------------------------------------------------------------------------------------------
+
+ By Joel Ferrier
+
+ Memory Acquisition Process
+
+ - SSH to target using Paramiko
+ - Determines Kernel
+ - Copies over Kernel Module
+
+  - **We have most most kernel modules pre-compiled for Amazon Certified AMIs**
+
+ - Copies memory to an S3 bucket using a secure network connection
+
+----
+
+Analyze Evidence: Memory
+=====================================
+
+.. image:: static/analyze-view-memory2.png
+    :width: 840px
+
+----
+
+Analyze Evidence: Memory
+=====================================
+
+.. image:: static/analyze-view-terminal2.png
+    :width: 840px
+
+----
+
+IR in AWS: Eradication
+=======================
+
+Evidence Data to Collect: Network
+-----------------------------------------
+
+**You may get some network information from memory**
+
+**More information from VPC Flow Logs**
+ - Coming soon to aws_ir
+
+---------------------
+
+IR in AWS: Conclusion
+=======================
+
+Covered Lots of Preparation Tools
+---------------------------------
+
+Trusted Advisor, Config, Prowler, Scout2, CloudCustodian, SecurityMonkey
+
+Covered 3 ThreatResponse Tools
+-------------------------------
+
+aws_ir, Margarita Shotgun, ThreatResponse Web
+
+Takeaways
+----------
+
+ - Customize tooling for your environment
+ - Use all (or parts) our code.  **It's MIT Licensed**
+ - Practice, Practice, Practice
+
+------
+
+Today's Agenda
+===============
+
+AWS Developments in the Last Year
+-------------------------------------
+
+Incident Response within AWS
+-------------------------------------
+
+*Advanced Attacks and Defenses in AWS*
+--------------------------------------
 
 Final Tips & Resources
 -------------------------------------
@@ -805,25 +1000,6 @@ So what?
     :align: center
 
 ------------------------------
-
-Today's Agenda
-===============
-
-AWS Developments in the Last Year
--------------------------------------
-
-Incident Response within AWS
--------------------------------------
-
-*Advanced Attacks and Defenses in AWS*
---------------------------------------
-
-Final Tips & Resources
--------------------------------------
-
-.. note:: Alex Speaks
-
--------------------------
 
 AWS Advanced Attacks
 ================================
