@@ -291,7 +291,18 @@ IR in AWS: Prep - Hardening
 `AWS Config / Config Rules <https://aws.amazon.com/config/>`_
 -------------------------------------------------------------------------------
 
- TODO
+.. image:: static/config-start.png
+
+.. note::
+
+  Config deals with logging what is called a configuration item for supported AWS resources whenever a supported resource is created, deleted, or changed.
+
+  AWS Config rules is a distinct offering from config. Config deals with logging, Config Rules evaluates the configuration item against a set of predefined critieria
+
+  AWS provides a set of configurable rules users may use, as well as the ability to make custom rules.
+
+  Configuration item $0.003 , Rule $2.00 for 20,000 evaluations / month.
+
 
 
 ------
@@ -970,32 +981,6 @@ Imagine .... once upon a time
 
 Attack Retrospective
 =============================
-
------------------
-
-What is ThreatResponse?
-=============================
-
-.. image:: static/tool-release.png
-    :align: center
-
-------------------------------
-
-ThreatResponse in Action
-================================
-
-------------------------------
-
-What just happened?
-================================
-
-------------------------------
-
-So what?
-==============================
-
-.. image:: static/projects.png
-    :align: center
 
 ------------------------------
 
