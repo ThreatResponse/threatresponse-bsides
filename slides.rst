@@ -869,6 +869,17 @@ Prowler : https://github.com/toniblyx/aws-cis-security-benchmark
 
 ------------------------------
 
+We love OSS Projects
+=============================
+
+* CapitalOne
+* Netflix
+* Yelp!
+* Prezi
+* Individual Contributors
+
+------------------------------
+
 Want more information?
 ==========================================
 
