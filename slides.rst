@@ -1,3 +1,5 @@
+.. role:: strike
+
 
 Hardening AWS Environments
 ==============================================================================
@@ -12,6 +14,8 @@ Andrew Krug & Alex McCormack
 
 @andrewkrug   @amccomarck
 
+.. note:: Andrew Speaks
+
 ----------------
 
 Before we get started
@@ -23,12 +27,16 @@ ImageCredit: OddDuckart
 
 http://bit.ly/2cl6qJ2
 
+.. note:: Andrew Speaks
+
 -----------------
 
 About Us
 ==========
 
 .. image:: static/team.png
+
+.. note:: Andrew Speaks
 
 -----------------
 
@@ -45,118 +53,571 @@ Other important things
 * We all have day jobs on the ThreatResponse Team
 * These are our opinions not the opinion of our employer.
 
------------------
-
-Why AWS Incident Response
-============================
-
-.. image:: static/why.jpg
-   :align: center
+.. note:: Andrew Speaks
 
 -----------------
 
-.. image:: static/sowhat2.jpg
-   :align: center
+Download the Slides
+===================
+
+* http://threatresponse.cloud
+* http://threatresponse.cloud/derbycon
+
+.. note::  Andrew Speaks
+
+-------------------
+
+Today's Agenda
+===============
+
+AWS Developments in the Last Year
+-------------------------------------
+
+Incident Response within AWS
+-------------------------------------
+
+Advanced Attacks and Defenses in AWS
+-------------------------------------
+
+Final Tips & Resources
+-------------------------------------
+
+.. note:: Alex Speaks
+
+-------------------------
+
+What's going on in AWS Security: Blog Posts
+===========================================
+
+
+Daniel Grezelak
+----------------------------------------------
+
+ - `Backdooring an AWS account <https://danielgrzelak.com/backdooring-an-aws-account-da007d36f8f9>`_
+
+ - `Exploring an AWS account post-compromise <https://danielgrzelak.com/exploring-an-aws-account-after-pwning-it-ff629c2aae39?source=latest>`_
+
+ - `Disrupting AWS logging <https://danielgrzelak.com/disrupting-aws-logging-a42e437d6594?source=latest>`_
 
 
 
------------------
+Toni de la Fuente
+----------------------------------------------
+ - `Cloud Forensics: CAINE7 on AWS <http://blyx.com/2016/06/16/cloud-forensics-caine7-on-aws/>`_
 
-This year in AWS Security
-===========================
+ - `Forensics in AWS: an introduction <http://blyx.com/2016/03/11/forensics-in-aws-an-introduction/>`_
 
------------------
+Eric Hammond
+----------------------------------------------
 
-BlackHat 2016 Talks
-===========================
+ - `AWS IAM "ReadOnlyAccess" Managed Policy is Too Permissive (For Us) <https://alestic.com/2015/10/aws-iam-readonly-too-permissive/>`_
 
------------------
+.. note:: Andrew Speaks
 
-Account Jumping, Post Infection Persistence, and Lateral Movement in AWS
-==========================================================================
+-----
 
-Dan Amiga and Dor Knafo
-------------------------
+What's going on in AWS Security: Blackhat Talks
+===============================================
 
-.. image:: static/fireglass.png
-   :align: center
+Dan Amiga and Don Knafo
+----------------------------------------------
 
-http://ubm.io/2dfeStx
-
-
------------------
-
-Access Keys will kill you before you kill the password
-=======================================================
+ - `Account Jumping, Post Infection Persistence, and Lateral Movement in AWS <http://ubm.io/2dfeStx>`_
 
 Loic Simon
-----------
+----------------------------------------------
 
-.. image:: static/bh2016.png
-   :align: center
+ - `Access Keys will kill you before you kill the password <http://ubm.io/2czdg9S>`_
 
-http://ubm.io/2czdg9S
+This Talk, v1
+---------------
 
------------------
+ - `Hardening AWS Environments and Automating Incident Response for AWS Compromises <https://s3-us-west-2.amazonaws.com/threatresponse-static/us-16-Krug-Hardening-AWS-Environments-and-Automating-Incident-Response-for-AWS-Compromises-wp.pdf>`_
 
-Us of Course!
-========================
+.. note:: Andrew Speaks
+
+-----
+
+Today's Agenda
+===============
+
+AWS Developments in the Last Year
+-------------------------------------
+
+*Incident Response within AWS*
+-------------------------------------
+
+ - Preparation
+ - Identification
+ - Containment
+ - Eradication
+ - Recovery
+
+Advanced Attacks and Defenses in AWS
+-------------------------------------
+
+Final Tips & Resources
+-------------------------------------
+
+.. note:: Alex Speaks
+
+-------------------------
+
+Today's Agenda
+===============
+
+AWS Developments in the Last Year
+-------------------------------------
+
+*Incident Response within AWS*
+-------------------------------------
+
+ - Preparation
+ - Identification
+ - Containment
+ - Eradication
+ - :strike:`Recovery`
+
+Advanced Attacks and Defenses in AWS
+-------------------------------------
+
+Final Tips & Resources
+-------------------------------------
+
+.. note:: Alex Speaks
+
+-------------------------
+
+IR in AWS: Preparation
+======================================
+
+Understand the Environment
+--------------------------
+
+ - `Amazon AWS Security Best Practices Guide <https://d0.awsstatic.com/whitepapers/Security/AWS_Security_Best_Practices.pdf>`_
+
+ - `CIS AWS Foundations Benchmark <https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf>`_
+
+Develop an Incident Response Plan
+----------------------------------
+
+ - Tom Arnold's `Incident Response in Amazon EC2: First Responders Guide to Security Incidents in the Cloud <https://www.sans.org/reading-room/whitepapers/incident/incident-response-amazon-ec2-first-responders-guide-security-incidents-cloud-36902>`_
 
 
-Hint : You're in this talk.
+----
+
+IR in AWS: Preparation
+======================================
+`Awesome Incident Response <https://github.com/meirwah/awesome-incident-response>`_
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+.. image:: static/awesome-ir-1.png
+
+----
+
+IR in AWS: Preparation
+======================================
+`Awesome Incident Response <https://github.com/meirwah/awesome-incident-response>`_
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+.. image:: static/awesome-ir-2.png
+
+----
+
+IR in AWS: Preparation
+======================================
+`Awesome Incident Response <https://github.com/meirwah/awesome-incident-response>`_
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+.. image:: static/awesome-ir-3.png
+
+----
+
+IR in AWS: Prep - Hardening
+======================================
+
+Best Practices Auditing
+-----------------------
+
+ - `AWS Trusted Advisor <https://aws.amazon.com/premiumsupport/trustedadvisor/>`_
+
+ - `AWS Config / Config Rules <https://aws.amazon.com/config/>`_
+
+ - `Prowler <https://github.com/toniblyx/aws-cis-security-benchmark>`_
+
+ - `Scout2 <https://github.com/nccgroup/Scout2>`_
+
+ - `CloudCustodian <https://github.com/capitalone/cloud-custodian>`_
+
+ - `SecurityMonkey <https://github.com/Netflix/security_monkey>`_
+
+IAM User / Policy Auditing
 ----------------------------
 
-.. image:: static/awsir.jpg
-   :align: center
+ - `Access Advisor <http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html>`_
+ - `Using CloudTrail Logs <http://threatresponse.cloud/blog/2016/tips_for_least_privilege_iam_policies.html>`_
+ - Video: `AWS (SEC305) How to Become an IAM Policy Ninja in 60 Minutes or Less <https://www.youtube.com/watch?v=Du478i9O_mc>`_
 
-http://www.threatresponse.cloud
+.. note:: Alex Speaks
+  Part of being prepared is hardening your systems and environment. But you can't just set it up and walk away, you should have a system of consistently evaluating your state to make sure your following the best practices.
 
-------------------
+------
 
-Significant Blogs
-===========================
+IR in AWS: Prep - Hardening
+======================================
 
-.. image:: static/danielgrzelak.png
-   :align: center
+`AWS Trusted Advisor <https://aws.amazon.com/premiumsupport/trustedadvisor/>`_
+-------------------------------------------------------------------------------
 
+.. image:: static/aws_trusted_advisor.png
+
+
+.. note:: Alex Speaks
+
+  around 12 built in checks, but only 3 or 4 for free
+
+  Full checks come with a business or enterprise support plan starting at 100 a month.
+
+  No API
+
+  But it is CEO Friendly.
+
+
+------
+
+IR in AWS: Prep - Hardening
+======================================
+
+`AWS Config / Config Rules <https://aws.amazon.com/config/>`_
+-------------------------------------------------------------------------------
+
+ TODO
+
+
+------
+
+IR in AWS: Prep - Hardening
+======================================
+
+`Prowler <https://github.com/toniblyx/aws-cis-security-benchmark>`_
+-------------------------------------------------------------------------------
+
+.. image:: static/prowler.png
+    :align: center
+
+.. note::
+  By our friend Toni De La Fuente
+
+  **What we love about it!**
+
+  * CIS Benchmarking Tool
+  * Can run out of your cloud
+  * Meaningful report data
+  * Actionable changes
+
+
+------
+
+IR in AWS: Prep - Hardening
+======================================
+
+`Scout2 <https://github.com/nccgroup/Scout2>`_
+-------------------------------------------------------------------------------
+
+ TODO
+
+
+------
+
+IR in AWS: Prep - Hardening
+======================================
+
+`CloudCustodian <https://github.com/capitalone/cloud-custodian>`_
+-------------------------------------------------------------------------------
+
+**What we love about it!**
+
+* Rule Based Approach
+* Has dry run
+* Can run on premise or in another account
+* It solves real compliance problems that you have
+
+----
+
+IR in AWS: Prep - Hardening
+======================================
+
+`SecurityMonkey <https://github.com/Netflix/security_monkey>`_
+-------------------------------------------------------------------------------
+
+**What we love about it!**
+
+* It's Django
+* Docker Container Support
+* Tracks item states over time
+* Security Scorecards your account
+* Can run in a bastion
+
+------------------------------
+
+IR in AWS: Prep - Hardening
+======================================
+
+Which tool should use use?
+-------------------------------
+
+ * *Whatever works best for your environment*
+ * Experiment with multiple tools
+
+Implement Something Immediately
+--------------------------------
+
+ * Start with simple tools like Prowler
+ * Move on to more complex tools as needed.
+
+------------------------------
+
+IR in AWS: Prep - Hardening
+======================================
+
+Best Practices Auditing
+-----------------------
+
+ - `AWS Trusted Advisor <https://aws.amazon.com/premiumsupport/trustedadvisor/>`_
+
+ - `AWS Config / Config Rules <https://aws.amazon.com/config/>`_
+
+ - `Prowler <https://github.com/toniblyx/aws-cis-security-benchmark>`_
+
+ - `Scout2 <https://github.com/nccgroup/Scout2>`_
+
+ - `CloudCustodian <https://github.com/capitalone/cloud-custodian>`_
+
+ - `SecurityMonkey <https://github.com/Netflix/security_monkey>`_
+
+*IAM User / Policy Auditing*
+----------------------------
+
+ - `Access Advisor <http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html>`_
+ - `Using CloudTrail Logs <http://threatresponse.cloud/blog/2016/tips_for_least_privilege_iam_policies.html>`_
+ - Video: `AWS (SEC305) How to Become an IAM Policy Ninja in 60 Minutes or Less <https://www.youtube.com/watch?v=Du478i9O_mc>`_
+
+.. note:: Alex Speaks
+  Part of being prepared is hardening your systems and environment. But you can't just set it up and walk away, you should have a system of consistently evaluating your state to make sure your following the best practices.
+
+----
+
+IR in AWS: Prep - Hardening
+======================================
+
+Access Advisor
+-------------------------------
+
+.. image:: static/access-advisor.png
+
+------------------------------
+
+IR in AWS: Prep - Hardening
+======================================
+
+`Policy Tuning with CloudTrail <http://threatresponse.cloud/blog/2016/tips_for_least_privilege_iam_policies.html>`_
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+.. code-block:: bash
+
+    almac@box ~/Downloads $ cat 114406602329_CloudTrail_us-east-1_20160913* |  \
+      jq -c \
+      '.Records[] |
+        {
+         eventName: .eventName,
+         userName: .userIdentity.userName,
+         eventSource: .eventSource
+        } |
+        select(.userName=="threatpreppolicytest") |
+        [.eventSource, .eventName]' \
+    | sort | uniq
+
+    ["cloudtrail.amazonaws.com","DescribeTrails"]
+    ["ec2.amazonaws.com","DescribeFlowLogs"]
+    ["ec2.amazonaws.com","DescribeRegions"]
+    ["ec2.amazonaws.com","DescribeVpcs"]
+    ["iam.amazonaws.com","GenerateCredentialReport"]
+    ["iam.amazonaws.com","GetCredentialReport"]
+    ["iam.amazonaws.com","ListAttachedUserPolicies"]
+
+Video: `AWS (SEC305) How to Become an IAM Policy Ninja in 60 Minutes or Less <https://www.youtube.com/watch?v=Du478i9O_mc>`_
+
+------------------------------
+
+
+IR in AWS: Prep - Hardening
+======================================
+
+Practice
+-------------------------------
+
+TODO
+
+------------------------------
+
+Today's Agenda
+===============
+
+AWS Developments in the Last Year
+-------------------------------------
+
+*Incident Response within AWS*
+-------------------------------------
+
+ - Preparation
+ - *Identification*
+ - Containment
+ - Eradication
+
+Advanced Attacks and Defenses in AWS
+-------------------------------------
+
+Final Tips & Resources
+-------------------------------------
+
+.. note:: Alex Speaks
+
+-------------------------
+
+IR in AWS: Identification
+======================================
+
+CloudTrail
+-------------------------------
+
+.. image:: static/cloudtrail.png
+
+-----------
+
+IR in AWS: Identification
+======================================
+
+CloudWatch
+-------------------------------
+
+.. image:: static/cloudwatch-createalarm.png
+
+----
+
+IR in AWS: Identification
+======================================
+
+`AWS CloudFormation Template For Security Events in CloudTrail <https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stack/detail?stackId=arn:aws:cloudformation:us-east-1:114406602329:stack%2FCloudWatchAlarmsForCloudTrail%2F24762880-5737-11e6-8abc-50d5cd148236>`_
+
+
+.. image:: static/cloudwatch-notification.png
+
+.. note::
+    Auth failures (denials)
+
+    CloudTrail Changes
+
+    Console Signin Failures
+
+    Ec2 Instance Changes
+
+    Gateway changes
+
+    IAM Policy Changes
+
+    Network AclChanges
+
+    SecurityGroupChanges
+
+    VpcChanges
+
+    Andrew will give another example of detection in CloudWatch.
+
+----
+
+Today's Agenda
+===============
+
+AWS Developments in the Last Year
+-------------------------------------
+
+*Incident Response within AWS*
+-------------------------------------
+
+ - Preparation
+ - Identification
+ - *Containment*
+ - Eradication
+
+Advanced Attacks and Defenses in AWS
+-------------------------------------
+
+Final Tips & Resources
+-------------------------------------
+
+.. note:: Alex Speaks
+
+-------------------------
+
+IR in AWS: Containment
+======================================
+
+Using aws_ir to:
 -----------------
 
-Things we're gonna do!
-===============================
+Contain a Host Compromise
 
-1. Examine Attacks Against AWS Accounts
-2. Show you the ThreatResponse Toolkit
-3. Talk about other OSS Project
-4. Release a new type of attack tool
+and
+---
 
-( not necessarily in that order )
+Contain a Key Compromise
 
------------------
 
-Common Types of Attacks
-=================================
+----
 
-1. Host Based Compromise
-2. Key Based Compromise
+IR in AWS: Containment
+======================================
 
-.. image:: static/hk-kc.png
-   :align: center
+Containing a Host Compromise
+-------------------------------
 
------------------
+ - Implement a security group to block all in/out traffic except to whitelist.
+ - Implement a network ACL.
 
-How does this happen?
-=================================
+aws_ir usage
+---------------
 
-* Zero-Days
-* Default Credentials
-* Carelessness
 
-**They do happen!  This can happen to you.**
+.. code-block:: bash
 
------------------
+    aws_ir host_compromise 1.2.3.4
 
-HC can become KC
-====================
+---------
+
+IR in AWS: Containment
+======================================
+
+Containing a Key Compromise
+-------------------------------
+
+ - Disable the access key.
+ - Block STS Tokens.
+
+aws_ir usage
+---------------
+
+
+.. code-block:: bash
+
+    aws_ir key_compromise AYAabyabyabyabyabya
+
+---------
+
+Host Compromise leads to
+=========================
+Key Compromise
+==================================
 
 Ever heard of the metadata service?
 -------------------------------------
@@ -205,7 +666,9 @@ Ever heard of the metadata service?
       "Code" : "Success",
       "LastUpdated" : "2016-09-21T17:00:07Z",
       "InstanceProfileArn" : "arn:aws:iam::671642278147:instance-profile/\
+
       cloudresponse_workstation-cr-16-080120-e5c0-us-west-1",
+
       "InstanceProfileId" : "AIPAJJWTONXQ7CLMRENCO"
     }
 
@@ -244,41 +707,227 @@ Good old iptables to the rescue.
 
     iptables -A OUTPUT -m owner ! —uid-owner root -d 169.254.169.254 -j DROP
 
------------------
-
-Assuming you didn't though!
-==============================
-
-What do you do?
-------------------------
-
-.. image:: static/bad-day.jpg
+.. note::
+  TODO - Doesn't this prevent STS from working?
 
 -----------------
 
-HC
-=================
+Key Compromise leads to
+=========================
+Host Compromise
+==================================
 
-.. image:: static/hc.png
-   :align: center
+ 1. Snapshot Disk for Targeted Host
+
+ 2. Mount Snapshot onto attacker-controlled image
+
+ 3. ???
+
+ 4. Profit!
+
 
 -----------------
 
-KC
-=============
+Today's Agenda
+===============
 
-.. image:: static/kc-cropped.png
-   :align: center
+AWS Developments in the Last Year
+-------------------------------------
 
------------------
+*Incident Response within AWS*
+-------------------------------------
 
-KC
-=================
+ - Preparation
+ - Identification
+ - Containment
+ - *Eradication*
 
-.. image:: static/kc.png
-   :align: center
+Advanced Attacks and Defenses in AWS
+-------------------------------------
 
------------------------------
+Final Tips & Resources
+-------------------------------------
+
+.. note:: Alex Speaks
+
+-------------------------
+
+IR in AWS: Eradication
+=======================
+
+ .. raw:: html
+
+     <div id="player-container"></div>
+     <script>
+       asciinema.player.js.CreatePlayer('player-container',
+        'casts/host.json',
+       {
+         speed : 5,
+       }
+       );
+     </script>
+
+----
+
+IR in AWS: Eradication
+=======================
+
+Evidence Data to Collect
+---------------------------
+
+ 1. AWS Data
+ 2. Disk
+ 3. Memory
+ 4. Network
+
+And store in a case specific S3 bucket
+-----------------------------------------
+
+----
+
+IR in AWS: Eradication
+=======================
+
+Evidence Data to Collect: AWS Data
+-----------------------------------------
+
+ 1. EC2 Console Output
+ 2. EC2 Console Screenshot
+ 3. AWS Meta-Data
+
+  - Attached Device Volume IDs
+  - Network Devices and Local / Public IPs
+  - AMI-ID
+
+ 4. Relevant CloudTrail Logs
+
+  - Coming soon to aws_ir
+
+----
+
+Analyze Evidence: EC2 Disks
+=====================================
+
+Snapshot attached disks.
+
+Analyze with ThreatResponse Workstation.
+
+.. image:: static/analyze-disk.png
+    :width: 840px
+
+----
+
+Analyze Evidence: EC2 Disks
+=====================================
+
+
+.. image:: static/disk-processing2.svg
+    :width: 840px
+
+----
+
+Analyze Evidence: EC2 Disks
+=====================================
+
+`TimeSketch <https://github.com/google/timesketch>`_
+
+.. image:: static/timesketch.png
+    :width: 840px
+
+----
+
+IR in AWS: Eradication
+=======================
+
+Evidence Data to Collect: Memory
+-----------------------------------------
+
+`Margarita Shotgun <https://github.com/ThreatResponse/margaritashotgun>`_
+---------------------------------------------------------------------------------------------------
+
+ By Joel Ferrier
+
+ Memory Acquisition Process
+
+ - SSH to target using Paramiko
+ - Determines Kernel
+ - Copies over Kernel Module
+
+  - **We have most most kernel modules pre-compiled for Amazon Certified AMIs**
+
+ - Copies memory to an S3 bucket using a secure network connection
+
+----
+
+Analyze Evidence: Memory
+=====================================
+
+.. image:: static/analyze-view-memory2.png
+    :width: 840px
+
+----
+
+Analyze Evidence: Memory
+=====================================
+
+.. image:: static/analyze-view-terminal2.png
+    :width: 840px
+
+----
+
+IR in AWS: Eradication
+=======================
+
+Evidence Data to Collect: Network
+-----------------------------------------
+
+**You may get some network information from memory**
+
+**More information from VPC Flow Logs**
+ - Coming soon to aws_ir
+
+---------------------
+
+IR in AWS: Conclusion
+=======================
+
+Covered Lots of Preparation Tools
+---------------------------------
+
+Trusted Advisor, Config, Prowler, Scout2, CloudCustodian, SecurityMonkey
+
+Covered 3 ThreatResponse Tools
+-------------------------------
+
+aws_ir, Margarita Shotgun, ThreatResponse Web
+
+Takeaways
+----------
+
+ - Customize tooling for your environment
+ - Use all (or parts) our code.  **It's MIT Licensed**
+ - Practice, Practice, Practice
+
+------
+
+Today's Agenda
+===============
+
+AWS Developments in the Last Year
+-------------------------------------
+
+Incident Response within AWS
+-------------------------------------
+
+*Advanced Attacks and Defenses in AWS*
+--------------------------------------
+
+Final Tips & Resources
+-------------------------------------
+
+.. note:: Alex Speaks
+
+-------------------------
 
 The AWS Security ECO System
 =============================
@@ -764,6 +1413,25 @@ So what?
 
 -------------------------------
 
+Today's Agenda
+===============
+
+AWS Developments in the Last Year
+-------------------------------------
+
+Incident Response within AWS
+-------------------------------------
+
+Advanced Attacks and Defenses in AWS
+-------------------------------------
+
+*Final Tips & Resources*
+-------------------------------------
+
+.. note:: Andrew Speaks
+
+-------------------------
+
 How do we even begin to protect ourselves?
 ===========================================
 
@@ -796,15 +1464,6 @@ Maybe we need four clouds
 .. image:: static/securitycloud.jpg
     :align: center
 
---------------
-
-Other Projects
-===========================================
-
-* Security Monkey
-* Cloud Custodian
-* Prowler -- *new*
-
 ------------------------------
 
 Project Comparison
@@ -815,59 +1474,6 @@ Project Comparison
 
 ------------------------------
 
-Security Monkey
-=============================
-
-Security Monkey : http://bit.ly/2cmMQaI
-
-**What we love about it!**
-
-* It's Django
-* Docker Container Support
-* Tracks item states over time
-* Security Scorecards your account
-* Can run in a bastion
-
-------------------------------
-
-CloudCustodian
-=============================
-
-Cloud Custodian : https://github.com/capitalone/cloud-custodian
-
-**What we love about it!**
-
-* Rule Based Approach
-* Has dry run
-* Can run on premise or in another account
-* It solves real compliance problems that you have
-
-------------------------------
-
-Prowler
-====================
-
-.. image:: static/prowler.png
-    :align: center
-
-
-------------------------------
-
-Prowler
-====================
-
-By our friend Toni De La Fuente
-
-Prowler : https://github.com/toniblyx/aws-cis-security-benchmark
-
-**What we love about it!**
-
-* CIS Benchmarking Tool
-* Can run out of your cloud
-* Meaningful report data
-* Actionable changes
-
-------------------------------
 
 We love OSS Projects
 =============================
