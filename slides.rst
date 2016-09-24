@@ -12,7 +12,7 @@ Automating Incident Response
 
 Andrew Krug & Alex McCormack
 
-@andrewkrug   @amccomarck
+@andrewkrug   @amccormack
 
 .. note:: Andrew Speaks
 
@@ -50,7 +50,7 @@ Important Things
 Other important things
 -----------------------
 
-* We all have day jobs on the ThreatResponse Team
+* All of us on the ThreatResponse Team have our day jobs.
 * These are our opinions not the opinion of our employer.
 
 .. note:: Andrew Speaks
@@ -112,7 +112,7 @@ Eric Hammond
 
  - `AWS IAM "ReadOnlyAccess" Managed Policy is Too Permissive (For Us) <https://alestic.com/2015/10/aws-iam-readonly-too-permissive/>`_
 
-.. note:: Andrew Speaks
+.. note:: Alex Speaks
 
 -----
 
@@ -203,6 +203,7 @@ Develop an Incident Response Plan
 
  - Tom Arnold's `Incident Response in Amazon EC2: First Responders Guide to Security Incidents in the Cloud <https://www.sans.org/reading-room/whitepapers/incident/incident-response-amazon-ec2-first-responders-guide-security-incidents-cloud-36902>`_
 
+.. note:: Alex Speaks
 
 ----
 
@@ -213,6 +214,8 @@ IR in AWS: Preparation
 
 .. image:: static/awesome-ir-1.png
 
+.. note:: Alex Speaks
+
 ----
 
 IR in AWS: Preparation
@@ -222,6 +225,8 @@ IR in AWS: Preparation
 
 .. image:: static/awesome-ir-2.png
 
+.. note:: Alex Speaks
+
 ----
 
 IR in AWS: Preparation
@@ -229,7 +234,14 @@ IR in AWS: Preparation
 `Awesome Incident Response <https://github.com/meirwah/awesome-incident-response>`_
 -----------------------------------------------------------------------------------------------------------------------------------------
 
+`Awesome Search <https://awesomelists.top>`_
+
+ - Curates awesome lists for you
+ - Security category includes Incident Response, Malware Analysis, etc
+
 .. image:: static/awesome-ir-3.png
+
+.. note:: Alex Speaks
 
 ----
 
@@ -274,6 +286,10 @@ IR in AWS: Prep - Hardening
 
 .. note:: Alex Speaks
 
+  Trusted Advisor provides guidance to help you provision your resources following AWS best practices.
+
+  Not just security. Also performance and cost.
+  
   around 12 built in checks, but only 3 or 4 for free
 
   Full checks come with a business or enterprise support plan starting at 100 a month.
@@ -282,6 +298,7 @@ IR in AWS: Prep - Hardening
 
   But it is CEO Friendly.
 
+.. note:: Alex Speaks
 
 ------
 
@@ -293,17 +310,19 @@ IR in AWS: Prep - Hardening
 
 .. image:: static/config-start.png
 
-.. note::
+`AWS Blog: Dynamic Compliance Checking for Cloud Resources <https://aws.amazon.com/blogs/aws/aws-config-rules-dynamic-compliance-checking-for-cloud-resources/>`_
+
+.. note:: Alex Speaks
 
   Config deals with logging what is called a configuration item for supported AWS resources whenever a supported resource is created, deleted, or changed.
+  
+  Supported resource are things like ec2 instances, VPCs, iam users. This historical record allows you to answer the question, what policies were attached to a particular user at some time.
 
-  AWS Config rules is a distinct offering from config. Config deals with logging, Config Rules evaluates the configuration item against a set of predefined critieria
+  AWS Config rules is a distinct offering from config. Config Rules evaluates the configuration item against a set of predefined critieria
 
   AWS provides a set of configurable rules users may use, as well as the ability to make custom rules.
 
-  Configuration item $0.003 , Rule $2.00 for 20,000 evaluations / month.
-
-
+  Andrew has a demo using config rules later.
 
 ------
 
@@ -326,6 +345,8 @@ IR in AWS: Prep - Hardening
   * Meaningful report data
   * Actionable changes
 
+.. note:: Alex Speaks
+
 
 ------
 
@@ -339,7 +360,8 @@ IR in AWS: Prep - Hardening
     :align: center
     :width: 840px
 
-.. note::
+.. note:: Alex Speaks
+
   By NCC Group. 63 rules. Easy to add your own.
 
   Dead simple to use. Good Error Handling.
@@ -357,9 +379,17 @@ IR in AWS: Prep - Hardening
 **What we love about it!**
 
 * Rule Based Approach
-* Has dry run
+* Large coverage
 * Can run on premise or in another account
 * It solves real compliance problems that you have
+
+.. note:: Alex Speaks
+
+    Cloud custodian is a rule engine for evaluation custom policies. 
+    
+    It covers a lot of the aws surface area: ~60 services and resources, ~160 actions
+    
+    Made public back in feb and still has frequent updates.
 
 ----
 
@@ -377,6 +407,14 @@ IR in AWS: Prep - Hardening
 * Security Scorecards your account
 * Can run in a bastion
 
+.. note:: Alex Speaks
+
+    Apart of Netflix's SimianArmy suite of infrastructure tools.
+    
+    Similar to Config it'll track item states over time and create a security scorecard.
+    
+    
+
 ------------------------------
 
 IR in AWS: Prep - Hardening
@@ -393,6 +431,8 @@ Implement Something Immediately
 
  * Start with simple tools like Prowler or Scout2
  * Move on to more complex tools as needed.
+
+.. note:: Alex Speaks
 
 ------------------------------
 
