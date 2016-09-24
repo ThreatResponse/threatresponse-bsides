@@ -407,6 +407,8 @@ IR in AWS: Prep - Hardening
 .. image:: static/item_with_issue.png
     :align: center
     :width: 840px
+    
+Image Credit: http://securitymonkey.readthedocs.io/en/latest/quickstart.html
 
 .. note:: Alex Speaks
 
