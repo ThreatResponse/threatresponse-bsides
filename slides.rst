@@ -243,7 +243,7 @@ Best Practices Auditing
 
  - `AWS Config / Config Rules <https://aws.amazon.com/config/>`_
 
- - `Prowler <https://github.com/toniblyx/aws-cis-security-benchmark>`_
+ - `Prowler <https://github.com/Alfresco/aws-cis-security-benchmark>`_
 
  - `Scout2 <https://github.com/nccgroup/Scout2>`_
 
@@ -291,7 +291,18 @@ IR in AWS: Prep - Hardening
 `AWS Config / Config Rules <https://aws.amazon.com/config/>`_
 -------------------------------------------------------------------------------
 
- TODO
+.. image:: static/config-start.png
+
+.. note::
+
+  Config deals with logging what is called a configuration item for supported AWS resources whenever a supported resource is created, deleted, or changed.
+
+  AWS Config rules is a distinct offering from config. Config deals with logging, Config Rules evaluates the configuration item against a set of predefined critieria
+
+  AWS provides a set of configurable rules users may use, as well as the ability to make custom rules.
+
+  Configuration item $0.003 , Rule $2.00 for 20,000 evaluations / month.
+
 
 
 ------
@@ -299,7 +310,7 @@ IR in AWS: Prep - Hardening
 IR in AWS: Prep - Hardening
 ======================================
 
-`Prowler <https://github.com/toniblyx/aws-cis-security-benchmark>`_
+`Prowler <https://github.com/Alfresco/aws-cis-security-benchmark>`_
 -------------------------------------------------------------------------------
 
 .. image:: static/prowler.png
@@ -324,8 +335,16 @@ IR in AWS: Prep - Hardening
 `Scout2 <https://github.com/nccgroup/Scout2>`_
 -------------------------------------------------------------------------------
 
- TODO
+.. image:: static/scout2-dashboard2.png
+    :align: center
+    :width: 840px
 
+.. note::
+  By NCC Group. 63 rules. Easy to add your own.
+
+  Dead simple to use. Good Error Handling.
+
+  Simple Reporting.
 
 ------
 
@@ -372,7 +391,7 @@ Which tool should use use?
 Implement Something Immediately
 --------------------------------
 
- * Start with simple tools like Prowler
+ * Start with simple tools like Prowler or Scout2
  * Move on to more complex tools as needed.
 
 ------------------------------
@@ -387,7 +406,7 @@ Best Practices Auditing
 
  - `AWS Config / Config Rules <https://aws.amazon.com/config/>`_
 
- - `Prowler <https://github.com/toniblyx/aws-cis-security-benchmark>`_
+ - `Prowler <https://github.com/Alfresco/aws-cis-security-benchmark>`_
 
  - `Scout2 <https://github.com/nccgroup/Scout2>`_
 
@@ -420,9 +439,7 @@ Access Advisor
 IR in AWS: Prep - Hardening
 ======================================
 
-`Policy Tuning with CloudTrail <http://threatresponse.cloud/blog/2016/tips_for_least_privilege_iam_policies.html>`_
--------------------------------------------------------------------------------------------------------------------------------
-
+Blog Post: `Policy Tuning with CloudTrail <http://threatresponse.cloud/blog/2016/tips_for_least_privilege_iam_policies.html>`_
 
 .. code-block:: bash
 
@@ -457,7 +474,14 @@ IR in AWS: Prep - Hardening
 Practice
 -------------------------------
 
-TODO
+* Have a test environment
+* Security simulations & IR Game Days
+
+ * `AWS re:Invent 2015 | (SEC316) Harden Your Architecture w/ Security Incident Response Simulations <https://www.youtube.com/watch?v=u-mRU44Q5u4>`_
+
+* **Note**: Tell Amazon before you practice
+
+ * https://aws.amazon.com/security/penetration-testing/
 
 ------------------------------
 
@@ -970,32 +994,6 @@ Imagine .... once upon a time
 
 Attack Retrospective
 =============================
-
------------------
-
-What is ThreatResponse?
-=============================
-
-.. image:: static/tool-release.png
-    :align: center
-
-------------------------------
-
-ThreatResponse in Action
-================================
-
-------------------------------
-
-What just happened?
-================================
-
-------------------------------
-
-So what?
-==============================
-
-.. image:: static/projects.png
-    :align: center
 
 ------------------------------
 
