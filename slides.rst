@@ -321,8 +321,8 @@ IR in AWS: Prep - Hardening
   AWS Config rules is a distinct offering from config. Config Rules evaluates the configuration item against a set of predefined critieria
 
   AWS provides a set of configurable rules users may use, as well as the ability to make custom rules.
-
-  Andrew has a demo using config rules later.
+  
+  Configuration items are one third of a cent. Config rules are $2/month with 20,000 evals. Further evals are $0.1 per 1,000.
 
 ------
 
@@ -344,6 +344,8 @@ IR in AWS: Prep - Hardening
   * Can run out of your cloud
   * Meaningful report data
   * Actionable changes
+  
+  Just under 1000 Lines of Code
 
 .. note:: Alex Speaks
 
@@ -387,7 +389,9 @@ IR in AWS: Prep - Hardening
 
     Cloud custodian is a rule engine for evaluation custom policies. 
     
-    It covers a lot of the aws surface area: ~60 services and resources, ~160 actions
+    It covers a lot of the aws surface area: ~60 services and resources, ~160 actions.
+    
+    Stateless
     
     Made public back in feb and still has frequent updates.
 
@@ -399,19 +403,20 @@ IR in AWS: Prep - Hardening
 `SecurityMonkey <https://github.com/Netflix/security_monkey>`_
 -------------------------------------------------------------------------------
 
-**What we love about it!**
 
-* It's Django
-* Docker Container Support
-* Tracks item states over time
-* Security Scorecards your account
-* Can run in a bastion
+.. image:: static/item_with_issue.png
+    :align: center
+    :width: 840px
 
 .. note:: Alex Speaks
 
-    Apart of Netflix's SimianArmy suite of infrastructure tools.
+    A part of Netflix's SimianArmy suite of infrastructure tools.
     
     Similar to Config it'll track item states over time and create a security scorecard.
+    
+    Biggest Diff: this is statefull, you set up the infra and it runs periodic checks and logs findings
+    
+    Example picture shows justifying an event, which you can then revisit later.
     
     
 
@@ -462,7 +467,11 @@ Best Practices Auditing
  - Video: `AWS (SEC305) How to Become an IAM Policy Ninja in 60 Minutes or Less <https://www.youtube.com/watch?v=Du478i9O_mc>`_
 
 .. note:: Alex Speaks
-  Part of being prepared is hardening your systems and environment. But you can't just set it up and walk away, you should have a system of consistently evaluating your state to make sure your following the best practices.
+  Moving on to IAM User and Policy Auditing. 
+  
+  Differes from last section where we looked at different tools to check for compliance wiht best practices
+  
+  Here we are going to talk specificaly about the best practice of least privilege. 
 
 ----
 
@@ -473,6 +482,15 @@ Access Advisor
 -------------------------------
 
 .. image:: static/access-advisor.png
+
+.. note:: Alex Speaks
+    Access Advisor is a tab located in the IAM Web console
+    
+    the last time a user performed an action against an AWS service.
+    
+    check users for permissive policies. 
+    
+    But no automation and not detailed enough.
 
 ------------------------------
 
@@ -505,6 +523,10 @@ Blog Post: `Policy Tuning with CloudTrail <http://threatresponse.cloud/blog/2016
 
 Video: `AWS (SEC305) How to Become an IAM Policy Ninja in 60 Minutes or Less <https://www.youtube.com/watch?v=Du478i9O_mc>`_
 
+.. note:: Alex Speaks
+    If you want API specific auditing
+    Best for policies, not users.
+
 ------------------------------
 
 
@@ -522,6 +544,8 @@ Practice
 * **Note**: Tell Amazon before you practice
 
  * https://aws.amazon.com/security/penetration-testing/
+ 
+.. note:: Alex Speaks
 
 ------------------------------
 
@@ -546,6 +570,9 @@ Final Tips & Resources
 -------------------------------------
 
 .. note:: Alex Speaks
+  Recap of Preparation: Understand the environment, harden and audit, and keep an I on user permissions.
+  
+  Moving on to Identification: Detect malicious activity at the AWS (not instance) level.
 
 -------------------------
 
@@ -557,6 +584,8 @@ CloudTrail
 
 .. image:: static/cloudtrail.png
 
+.. note:: Andrew Speaks
+
 -----------
 
 IR in AWS: Identification
@@ -566,6 +595,8 @@ CloudWatch
 -------------------------------
 
 .. image:: static/cloudwatch-createalarm.png
+
+.. note:: Andrew Speaks
 
 ----
 
@@ -577,7 +608,9 @@ IR in AWS: Identification
 
 .. image:: static/cloudwatch-notification.png
 
-.. note::
+.. note:: Andrew Speaks
+    The CloudWatchAlarmsForCloudTrail CloudFormationTemplate.
+    
     Auth failures (denials)
 
     CloudTrail Changes
@@ -620,7 +653,10 @@ Advanced Attacks and Defenses in AWS
 Final Tips & Resources
 -------------------------------------
 
-.. note:: Alex Speaks
+.. note:: Andrew Speaks
+    To conclude the Identification section
+    
+    Leverage CloudTrail, CloudWatch Alarms.
 
 -------------------------
 
@@ -637,6 +673,9 @@ and
 
 Contain a Key Compromise
 
+.. note:: Andrew Speaks
+
+     Explain AWS_IR. Contains and collects forensic evidence.
 
 ----
 
@@ -647,7 +686,7 @@ Containing a Host Compromise
 -------------------------------
 
  - Implement a security group to block all in/out traffic except to whitelist.
- - Implement a network ACL.
+ - Coming soon to aws_ir: add a network ACL.
 
 aws_ir usage
 ---------------
@@ -656,6 +695,13 @@ aws_ir usage
 .. code-block:: bash
 
     aws_ir host_compromise 1.2.3.4
+    
+.. note:: Andrew Speaks
+   2 Things to contain a host:
+   
+   New Security Group
+   
+   Change network ACL to sever established connections.
 
 ---------
 
@@ -666,7 +712,7 @@ Containing a Key Compromise
 -------------------------------
 
  - Disable the access key.
- - Block STS Tokens.
+ - Coming soon to aws_ir: Block STS Tokens.
 
 aws_ir usage
 ---------------
@@ -675,6 +721,13 @@ aws_ir usage
 .. code-block:: bash
 
     aws_ir key_compromise AYAabyabyabyabyabya
+    
+.. note:: Andrew Speaks
+   2 Things to contain a key:
+   
+   Disable the access key
+   
+   Block STS tokens, possiblly revoke all policies for that user until you understand what happened.
 
 ---------
 
@@ -685,6 +738,10 @@ Key Compromise
 
 Ever heard of the metadata service?
 -------------------------------------
+
+.. note:: Andrew Speaks
+
+   Host compromise leads to Key compromise from the metadata service
 
 -----------------
 
@@ -717,7 +774,10 @@ Ever heard of the metadata service?
     public-keys/
     reservation-id
     security-groups
+    
+.. note:: Andrew Speaks
 
+   Just curl a URL and you can get all kinds of information.
 
 -----------------
 
@@ -736,6 +796,9 @@ Ever heard of the metadata service?
       "InstanceProfileId" : "AIPAJJWTONXQ7CLMRENCO"
     }
 
+.. note:: Andrew Speaks
+
+   Curl /iam/info to get the role name from the InstanceProfileARN. Once you get the role name
 -----------------
 
 **Once you know the role name**
@@ -755,6 +818,10 @@ Ever heard of the metadata service?
     }
 
 Winning!
+
+.. note:: Andrew Speaks
+
+   Query for the security credentials for that role and you can get access key id and secret.
 ================================
 
 -----------------
@@ -771,8 +838,9 @@ Good old iptables to the rescue.
 
     iptables -A OUTPUT -m owner ! —uid-owner root -d 169.254.169.254 -j DROP
 
-.. note::
-  TODO - Doesn't this prevent STS from working?
+.. note:: Andrew Speaks
+
+   Implement IP tables so only the processes owned by root can query the service.
 
 -----------------
 
@@ -789,6 +857,11 @@ Host Compromise
 
  4. Profit!
 
+.. note:: Andrew Speaks
+
+   Read steps.
+   
+   This may or may not actually get you on the box, depending on setup. But its possible /etc/shadow might show some weak hashes, or the credentials to the database are stored in plaintext some where.
 
 -----------------
 
@@ -812,8 +885,10 @@ Advanced Attacks and Defenses in AWS
 Final Tips & Resources
 -------------------------------------
 
-.. note:: Alex Speaks
+.. note:: Andrew Speaks
 
+  In conclusion, contain quickly so host compromises and key compromises don't pile up. 
+  
 -------------------------
 
 IR in AWS: Eradication
@@ -831,6 +906,18 @@ IR in AWS: Eradication
        );
      </script>
 
+.. note:: Alex Speaks
+    
+    For eradication, focus on performing forensics on a compromised host to understand the extent of the breach, ensure we contained it, and determine the problem that needs to be patched.
+    
+    In this video you'll see aws_ir run against a compromised host. 
+    
+    We should note its running at 5x speed. 
+    
+    It will contain the host, and then it will start extracting all the forensic evidence it can. 
+    
+    Lets Discuss what evicence to collect.
+
 ----
 
 IR in AWS: Eradication
@@ -847,7 +934,13 @@ Evidence Data to Collect
 And store in a case specific S3 bucket
 -----------------------------------------
 
+.. note:: Alex Speaks
+  You'll want to collect AWS specific data, disk, memory and Network data.
+  
+  At this time aws_ir collects the AWS, Disk and Memory Data. 
+  
 ----
+
 
 IR in AWS: Eradication
 =======================
@@ -867,6 +960,8 @@ Evidence Data to Collect: AWS Data
 
   - Coming soon to aws_ir
 
+.. note:: Alex Speaks
+  
 ----
 
 Analyze Evidence: EC2 Disks
@@ -879,6 +974,11 @@ Analyze with ThreatResponse Workstation.
 .. image:: static/analyze-disk.png
     :width: 840px
 
+.. note:: Alex Speaks
+
+  Another tool we released is the threatresponse workstation. 
+  
+  The workstation is an AMI that can be launched with aws-ir, and it adds lots of features around disk and memory analysis. 
 ----
 
 Analyze Evidence: EC2 Disks
@@ -887,6 +987,13 @@ Analyze Evidence: EC2 Disks
 
 .. image:: static/disk-processing2.svg
     :width: 840px
+
+.. note:: Alex Speaks
+    Within threatresponse workstation we can spin up an AWS ec2 image and process the disk into a .plaso file using log2timeline. 
+    
+    Anyone who has used log2timeline knows that it can be a bit tricky to get going, so having it available at the click of a button is really nice.
+    
+    When log2timeline complets our plaso file will be placed within our s3 case bucket.
 
 ----
 
@@ -897,6 +1004,9 @@ Analyze Evidence: EC2 Disks
 
 .. image:: static/timesketch.png
     :width: 840px
+
+.. note:: Alex Speaks
+    We can view our .plaso file using the TimeSketch tool. TimeSketch is a tool made by Google, but they dont consider it a google project, per se. It is a handy tool to analyze timeline events and mark or collaborate on signifigant findings.
 
 ----
 
@@ -911,7 +1021,7 @@ Evidence Data to Collect: Memory
 
  By Joel Ferrier
 
- Memory Acquisition Process
+ Standalone Memory Acquisition Tool
 
  - SSH to target using Paramiko
  - Determines Kernel
@@ -920,6 +1030,19 @@ Evidence Data to Collect: Memory
   - **We have most most kernel modules pre-compiled for Amazon Certified AMIs**
 
  - Copies memory to an S3 bucket using a secure network connection
+ 
+.. note:: Alex Speaks
+    MS is a standalone Memory Acquisition tool designed by Joel Ferrier on the ThreatResponse Team. 
+    
+    SSH to target using Paramiko
+    
+    Determines Kernel
+    
+    Copies over Kernel Module
+
+    We have most most kernel modules pre-compiled for Amazon Certified AMIs. You can also specifiy your own source of KM if you don't trust us.
+
+    Copies memory to an S3 bucket using a secure network connection.
 
 ----
 
@@ -929,6 +1052,9 @@ Analyze Evidence: Memory
 .. image:: static/analyze-view-memory2.png
     :width: 840px
 
+.. note:: Alex Speaks
+    Once the memory lime file is in s3 bucket, you launch volatility from within the ThreatResponse Workstation to analyse the memory.
+
 ----
 
 Analyze Evidence: Memory
@@ -936,6 +1062,9 @@ Analyze Evidence: Memory
 
 .. image:: static/analyze-view-terminal2.png
     :width: 840px
+    
+.. note:: Alex Speaks
+    You can analyze in the cloud so you don't have to download the memory file to your local machine.
 
 ----
 
@@ -949,6 +1078,8 @@ Evidence Data to Collect: Network
 
 **More information from VPC Flow Logs**
  - Coming soon to aws_ir
+ 
+.. note:: Alex Speaks
 
 ---------------------
 
@@ -963,7 +1094,7 @@ Trusted Advisor, Config, Prowler, Scout2, CloudCustodian, SecurityMonkey
 Covered 3 ThreatResponse Tools
 -------------------------------
 
-aws_ir, Margarita Shotgun, ThreatResponse Web
+aws_ir, Margarita Shotgun, ThreatResponse Workstation
 
 Takeaways
 ----------
@@ -971,6 +1102,8 @@ Takeaways
  - Customize tooling for your environment
  - Use all (or parts) our code.  **It's MIT Licensed**
  - Practice, Practice, Practice
+
+.. note:: Alex Speaks
 
 ------
 
@@ -991,6 +1124,8 @@ Final Tips & Resources
 
 .. note:: Alex Speaks
 
+That concludes IR within AWS. Lets take a look at Advanced attacks and Defenses in AWS.
+
 -------------------------
 
 The AWS Security ECO System
@@ -1003,6 +1138,10 @@ Basically all you need is:
 3. ( Optional a thing to operate on )
 
 You too can make Product Madlibs
+
+.. note:: Andrew Speaks
+
+
 --------------------------------
 
 
