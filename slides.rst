@@ -1165,17 +1165,6 @@ A: "Dan Kaminsky in Read My Lips: Let’s Kill 0Day"
 
 -----------------------------
 
-Attack Scenario
-=============================
-
-Imagine .... once upon a time
-
------------------------------
-
-Attack Retrospective
-=============================
-
-------------------------------
 
 AWS Advanced Attacks
 ================================
@@ -1643,15 +1632,6 @@ Maybe we need four clouds
     :align: center
 
 ------------------------------
-
-Project Comparison
-===========================================
-
-.. image:: static/comparison.png
-    :align: center
-
-------------------------------
-
 
 We love OSS Projects
 =============================
