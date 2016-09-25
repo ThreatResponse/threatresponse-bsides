@@ -289,7 +289,7 @@ IR in AWS: Prep - Hardening
   Trusted Advisor provides guidance to help you provision your resources following AWS best practices.
 
   Not just security. Also performance and cost.
-  
+
   around 12 built in checks, but only 3 or 4 for free
 
   Full checks come with a business or enterprise support plan starting at 100 a month.
@@ -315,13 +315,13 @@ IR in AWS: Prep - Hardening
 .. note:: Alex Speaks
 
   Config deals with logging what is called a configuration item for supported AWS resources whenever a supported resource is created, deleted, or changed.
-  
+
   Supported resource are things like ec2 instances, VPCs, iam users. This historical record allows you to answer the question, what policies were attached to a particular user at some time.
 
   AWS Config rules is a distinct offering from config. Config Rules evaluates the configuration item against a set of predefined critieria
 
   AWS provides a set of configurable rules users may use, as well as the ability to make custom rules.
-  
+
   Configuration items are one third of a cent. Config rules are $2/month with 20,000 evals. Further evals are $0.1 per 1,000.
 
 ------
@@ -344,7 +344,7 @@ IR in AWS: Prep - Hardening
   * Can run out of your cloud
   * Meaningful report data
   * Actionable changes
-  
+
   Just under 1000 Lines of Code
 
 .. note:: Alex Speaks
@@ -387,12 +387,12 @@ IR in AWS: Prep - Hardening
 
 .. note:: Alex Speaks
 
-    Cloud custodian is a rule engine for evaluation custom policies. 
-    
+    Cloud custodian is a rule engine for evaluation custom policies.
+
     It covers a lot of the aws surface area: ~60 services and resources, ~160 actions.
-    
+
     Stateless
-    
+
     Made public back in feb and still has frequent updates.
 
 ----
@@ -407,20 +407,20 @@ IR in AWS: Prep - Hardening
 .. image:: static/item_with_issue.png
     :align: center
     :width: 840px
-    
+
 Image Credit: http://securitymonkey.readthedocs.io/en/latest/quickstart.html
 
 .. note:: Alex Speaks
 
     A part of Netflix's SimianArmy suite of infrastructure tools.
-    
+
     Similar to Config it'll track item states over time and create a security scorecard.
-    
+
     Biggest Diff: this is statefull, you set up the infra and it runs periodic checks and logs findings
-    
+
     Example picture shows justifying an event, which you can then revisit later.
-    
-    
+
+
 
 ------------------------------
 
@@ -469,11 +469,11 @@ Best Practices Auditing
  - Video: `AWS (SEC305) How to Become an IAM Policy Ninja in 60 Minutes or Less <https://www.youtube.com/watch?v=Du478i9O_mc>`_
 
 .. note:: Alex Speaks
-  Moving on to IAM User and Policy Auditing. 
-  
+  Moving on to IAM User and Policy Auditing.
+
   Differes from last section where we looked at different tools to check for compliance wiht best practices
-  
-  Here we are going to talk specificaly about the best practice of least privilege. 
+
+  Here we are going to talk specificaly about the best practice of least privilege.
 
 ----
 
@@ -487,11 +487,11 @@ Access Advisor
 
 .. note:: Alex Speaks
     Access Advisor is a tab located in the IAM Web console
-    
+
     the last time a user performed an action against an AWS service.
-    
-    check users for permissive policies. 
-    
+
+    check users for permissive policies.
+
     But no automation and not detailed enough.
 
 ------------------------------
@@ -546,7 +546,7 @@ Practice
 * **Note**: Tell Amazon before you practice
 
  * https://aws.amazon.com/security/penetration-testing/
- 
+
 .. note:: Alex Speaks
 
 ------------------------------
@@ -573,7 +573,7 @@ Final Tips & Resources
 
 .. note:: Alex Speaks
   Recap of Preparation: Understand the environment, harden and audit, and keep an I on user permissions.
-  
+
   Moving on to Identification: Detect malicious activity at the AWS (not instance) level.
 
 -------------------------
@@ -612,7 +612,7 @@ IR in AWS: Identification
 
 .. note:: Andrew Speaks
     The CloudWatchAlarmsForCloudTrail CloudFormationTemplate.
-    
+
     Auth failures (denials)
 
     CloudTrail Changes
@@ -657,7 +657,7 @@ Final Tips & Resources
 
 .. note:: Andrew Speaks
     To conclude the Identification section
-    
+
     Leverage CloudTrail, CloudWatch Alarms.
 
 -------------------------
@@ -697,12 +697,12 @@ aws_ir usage
 .. code-block:: bash
 
     aws_ir host_compromise 1.2.3.4
-    
+
 .. note:: Andrew Speaks
    2 Things to contain a host:
-   
+
    New Security Group
-   
+
    Change network ACL to sever established connections.
 
 ---------
@@ -723,12 +723,12 @@ aws_ir usage
 .. code-block:: bash
 
     aws_ir key_compromise AYAabyabyabyabyabya
-    
+
 .. note:: Andrew Speaks
    2 Things to contain a key:
-   
+
    Disable the access key
-   
+
    Block STS tokens, possiblly revoke all policies for that user until you understand what happened.
 
 ---------
@@ -776,7 +776,7 @@ Ever heard of the metadata service?
     public-keys/
     reservation-id
     security-groups
-    
+
 .. note:: Andrew Speaks
 
    Just curl a URL and you can get all kinds of information.
@@ -801,6 +801,7 @@ Ever heard of the metadata service?
 .. note:: Andrew Speaks
 
    Curl /iam/info to get the role name from the InstanceProfileARN. Once you get the role name
+
 -----------------
 
 **Once you know the role name**
@@ -820,11 +821,11 @@ Ever heard of the metadata service?
     }
 
 Winning!
+================================
 
 .. note:: Andrew Speaks
 
    Query for the security credentials for that role and you can get access key id and secret.
-================================
 
 -----------------
 
@@ -862,7 +863,7 @@ Host Compromise
 .. note:: Andrew Speaks
 
    Read steps.
-   
+
    This may or may not actually get you on the box, depending on setup. But its possible /etc/shadow might show some weak hashes, or the credentials to the database are stored in plaintext some where.
 
 -----------------
@@ -889,8 +890,8 @@ Final Tips & Resources
 
 .. note:: Andrew Speaks
 
-  In conclusion, contain quickly so host compromises and key compromises don't pile up. 
-  
+  In conclusion, contain quickly so host compromises and key compromises don't pile up.
+
 -------------------------
 
 IR in AWS: Eradication
@@ -909,15 +910,15 @@ IR in AWS: Eradication
      </script>
 
 .. note:: Alex Speaks
-    
+
     For eradication, focus on performing forensics on a compromised host to understand the extent of the breach, ensure we contained it, and determine the problem that needs to be patched.
-    
-    In this video you'll see aws_ir run against a compromised host. 
-    
-    We should note its running at 5x speed. 
-    
-    It will contain the host, and then it will start extracting all the forensic evidence it can. 
-    
+
+    In this video you'll see aws_ir run against a compromised host.
+
+    We should note its running at 5x speed.
+
+    It will contain the host, and then it will start extracting all the forensic evidence it can.
+
     Lets Discuss what evicence to collect.
 
 ----
@@ -938,9 +939,9 @@ And store in a case specific S3 bucket
 
 .. note:: Alex Speaks
   You'll want to collect AWS specific data, disk, memory and Network data.
-  
-  At this time aws_ir collects the AWS, Disk and Memory Data. 
-  
+
+  At this time aws_ir collects the AWS, Disk and Memory Data.
+
 ----
 
 
@@ -963,7 +964,7 @@ Evidence Data to Collect: AWS Data
   - Coming soon to aws_ir
 
 .. note:: Alex Speaks
-  
+
 ----
 
 Analyze Evidence: EC2 Disks
@@ -978,9 +979,10 @@ Analyze with ThreatResponse Workstation.
 
 .. note:: Alex Speaks
 
-  Another tool we released is the threatresponse workstation. 
-  
-  The workstation is an AMI that can be launched with aws-ir, and it adds lots of features around disk and memory analysis. 
+  Another tool we released is the threatresponse workstation.
+
+  The workstation is an AMI that can be launched with aws-ir, and it adds lots of features around disk and memory analysis.
+
 ----
 
 Analyze Evidence: EC2 Disks
@@ -991,10 +993,10 @@ Analyze Evidence: EC2 Disks
     :width: 840px
 
 .. note:: Alex Speaks
-    Within threatresponse workstation we can spin up an AWS ec2 image and process the disk into a .plaso file using log2timeline. 
-    
+    Within threatresponse workstation we can spin up an AWS ec2 image and process the disk into a .plaso file using log2timeline.
+
     Anyone who has used log2timeline knows that it can be a bit tricky to get going, so having it available at the click of a button is really nice.
-    
+
     When log2timeline complets our plaso file will be placed within our s3 case bucket.
 
 ----
@@ -1032,14 +1034,14 @@ Evidence Data to Collect: Memory
   - **We have most most kernel modules pre-compiled for Amazon Certified AMIs**
 
  - Copies memory to an S3 bucket using a secure network connection
- 
+
 .. note:: Alex Speaks
-    MS is a standalone Memory Acquisition tool designed by Joel Ferrier on the ThreatResponse Team. 
-    
+    MS is a standalone Memory Acquisition tool designed by Joel Ferrier on the ThreatResponse Team.
+
     SSH to target using Paramiko
-    
+
     Determines Kernel
-    
+
     Copies over Kernel Module
 
     We have most most kernel modules pre-compiled for Amazon Certified AMIs. You can also specifiy your own source of KM if you don't trust us.
@@ -1064,7 +1066,7 @@ Analyze Evidence: Memory
 
 .. image:: static/analyze-view-terminal2.png
     :width: 840px
-    
+
 .. note:: Alex Speaks
     You can analyze in the cloud so you don't have to download the memory file to your local machine.
 
@@ -1080,7 +1082,7 @@ Evidence Data to Collect: Network
 
 **More information from VPC Flow Logs**
  - Coming soon to aws_ir
- 
+
 .. note:: Alex Speaks
 
 ---------------------
@@ -1145,9 +1147,6 @@ You too can make Product Madlibs
 
 
 --------------------------------
-
-
------------------
 
 Attack Time!
 ==============================
@@ -1555,9 +1554,9 @@ Let's look at the MadKing
 
 .. raw:: html
 
-    <div id="player-container"></div>
+    <div id="player-container23"></div>
     <script>
-      asciinema.player.js.CreatePlayer('player-container', 'casts/mad-king.json',
+      asciinema.player.js.CreatePlayer('player-container23', 'casts/mad-king.json',
       {
         speed : 5,
       }
