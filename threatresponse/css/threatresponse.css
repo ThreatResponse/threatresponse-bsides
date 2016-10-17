@@ -153,3 +153,12 @@ img {
         width: 200%;
     }
 }
+
+img.con-icon {
+  float: right !important;
+  position: relative !important;
+  width: 122px !important;
+  height: 45px !important;
+  padding-right: 5px;
+
+}

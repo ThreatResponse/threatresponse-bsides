@@ -10,24 +10,24 @@ and
 Automating Incident Response
 ===============================
 
-Andrew Krug & Alex McCormack
+Andrew Krug
 
-@andrewkrug   @amccormack
+@andrewkrug : Twitter
 
-.. note:: Andrew Speaks
+
 
 ----------------
 
-Before we get started
-=======================
+It's Always Cloudy in Portland
+================================
 
 .. image:: static/pwnie.png
+   :height: 600px
 
 ImageCredit: OddDuckart
-
 http://bit.ly/2cl6qJ2
 
-.. note:: Andrew Speaks
+
 
 -----------------
 
@@ -37,6 +37,14 @@ About Us
 .. image:: static/team.png
 
 .. note:: Andrew Speaks
+
+-----------------
+
+New People
+====================
+
+* Toni De la Fuente from Blyx.com
+* Amazon Web Services
 
 -----------------
 
@@ -61,30 +69,12 @@ Download the Slides
 ===================
 
 * http://threatresponse.cloud
-* http://threatresponse.cloud/derbycon
+* http://threatresponse.cloud/bsidespdx
 
 .. note::  Andrew Speaks
 
 -------------------
 
-Today's Agenda
-===============
-
-AWS Developments in the Last Year
--------------------------------------
-
-Incident Response within AWS
--------------------------------------
-
-Advanced Attacks and Defenses in AWS
--------------------------------------
-
-Final Tips & Resources
--------------------------------------
-
-.. note:: Alex Speaks
-
--------------------------
 
 What's going on in AWS Security: Blog Posts
 ===========================================
@@ -135,56 +125,6 @@ This Talk, v1
  - `Hardening AWS Environments and Automating Incident Response for AWS Compromises <https://s3-us-west-2.amazonaws.com/threatresponse-static/us-16-Krug-Hardening-AWS-Environments-and-Automating-Incident-Response-for-AWS-Compromises-wp.pdf>`_
 
 .. note:: Andrew Speaks
-
------
-
-Today's Agenda
-===============
-
-AWS Developments in the Last Year
--------------------------------------
-
-*Incident Response within AWS*
--------------------------------------
-
- - Preparation
- - Identification
- - Containment
- - Eradication
- - Recovery
-
-Advanced Attacks and Defenses in AWS
--------------------------------------
-
-Final Tips & Resources
--------------------------------------
-
-.. note:: Alex Speaks
-
--------------------------
-
-Today's Agenda
-===============
-
-AWS Developments in the Last Year
--------------------------------------
-
-*Incident Response within AWS*
--------------------------------------
-
- - Preparation
- - Identification
- - Containment
- - Eradication
- - :strike:`Recovery`
-
-Advanced Attacks and Defenses in AWS
--------------------------------------
-
-Final Tips & Resources
--------------------------------------
-
-.. note:: Alex Speaks
 
 -------------------------
 
@@ -967,108 +907,12 @@ Evidence Data to Collect: AWS Data
 
 ----
 
-Analyze Evidence: EC2 Disks
-=====================================
+Memory
+====================
 
-Snapshot attached disks.
+.. image:: static/200_s.gif
 
-Analyze with ThreatResponse Workstation.
-
-.. image:: static/analyze-disk.png
-    :width: 840px
-
-.. note:: Alex Speaks
-
-  Another tool we released is the threatresponse workstation.
-
-  The workstation is an AMI that can be launched with aws-ir, and it adds lots of features around disk and memory analysis.
-
-----
-
-Analyze Evidence: EC2 Disks
-=====================================
-
-
-.. image:: static/disk-processing2.svg
-    :width: 840px
-
-.. note:: Alex Speaks
-    Within threatresponse workstation we can spin up an AWS ec2 image and process the disk into a .plaso file using log2timeline.
-
-    Anyone who has used log2timeline knows that it can be a bit tricky to get going, so having it available at the click of a button is really nice.
-
-    When log2timeline complets our plaso file will be placed within our s3 case bucket.
-
-----
-
-Analyze Evidence: EC2 Disks
-=====================================
-
-`TimeSketch <https://github.com/google/timesketch>`_
-
-.. image:: static/timesketch.png
-    :width: 840px
-
-.. note:: Alex Speaks
-    We can view our .plaso file using the TimeSketch tool. TimeSketch is a tool made by Google, but they dont consider it a google project, per se. It is a handy tool to analyze timeline events and mark or collaborate on signifigant findings.
-
-----
-
-IR in AWS: Eradication
-=======================
-
-Evidence Data to Collect: Memory
------------------------------------------
-
-`Margarita Shotgun <https://github.com/ThreatResponse/margaritashotgun>`_
----------------------------------------------------------------------------------------------------
-
- By Joel Ferrier
-
- Standalone Memory Acquisition Tool
-
- - SSH to target using Paramiko
- - Determines Kernel
- - Copies over Kernel Module
-
-  - **We have most most kernel modules pre-compiled for Amazon Certified AMIs**
-
- - Copies memory to an S3 bucket using a secure network connection
-
-.. note:: Alex Speaks
-    MS is a standalone Memory Acquisition tool designed by Joel Ferrier on the ThreatResponse Team.
-
-    SSH to target using Paramiko
-
-    Determines Kernel
-
-    Copies over Kernel Module
-
-    We have most most kernel modules pre-compiled for Amazon Certified AMIs. You can also specifiy your own source of KM if you don't trust us.
-
-    Copies memory to an S3 bucket using a secure network connection.
-
-----
-
-Analyze Evidence: Memory
-=====================================
-
-.. image:: static/analyze-view-memory2.png
-    :width: 840px
-
-.. note:: Alex Speaks
-    Once the memory lime file is in s3 bucket, you launch volatility from within the ThreatResponse Workstation to analyse the memory.
-
-----
-
-Analyze Evidence: Memory
-=====================================
-
-.. image:: static/analyze-view-terminal2.png
-    :width: 840px
-
-.. note:: Alex Speaks
-    You can analyze in the cloud so you don't have to download the memory file to your local machine.
+Insert Coin To Hear A BSides Presentation on This
 
 ----
 
@@ -1095,11 +939,6 @@ Covered Lots of Preparation Tools
 
 Trusted Advisor, Config, Prowler, Scout2, CloudCustodian, SecurityMonkey
 
-Covered 3 ThreatResponse Tools
--------------------------------
-
-aws_ir, Margarita Shotgun, ThreatResponse Workstation
-
 Takeaways
 ----------
 
@@ -1111,42 +950,6 @@ Takeaways
 
 ------
 
-Today's Agenda
-===============
-
-AWS Developments in the Last Year
--------------------------------------
-
-Incident Response within AWS
--------------------------------------
-
-*Advanced Attacks and Defenses in AWS*
---------------------------------------
-
-Final Tips & Resources
--------------------------------------
-
-.. note:: Alex Speaks
-
-That concludes IR within AWS. Lets take a look at Advanced attacks and Defenses in AWS.
-
--------------------------
-
-The AWS Security ECO System
-=============================
-
-Basically all you need is:
-
-1. Word about a Cloud
-2. Action or a Place
-3. ( Optional a thing to operate on )
-
-You too can make Product Madlibs
-
-.. note:: Andrew Speaks
-
-
---------------------------------
 
 Attack Time!
 ==============================
@@ -1275,8 +1078,8 @@ For the win
 ----------------------------------
 
 
-Video of CloudWatch Pipeline
-================================
+Video of CloudWatch Pipeline : Skipping
+===========================================
 
 .. raw:: html
 
@@ -1338,23 +1141,6 @@ So what?
 
 
 --------------------------------
-
-Companies have ceased to be.
-==================================
-
-.. image:: static/ars.png
-    :align: center
-
---------------------------------
-
-Trust is hard to gain!
-============================================
-
-Easy to lose.
----------------------------------
-
---------------------------------
-
 
 How do you
 =================================
@@ -1484,63 +1270,6 @@ Mad King Demo
 
 ------------------------------
 
-Just Imagine
-============================
-
-.. image:: static/story1.jpg
-
-You're working in the magical land of Cosnovion.
-
-
-------------------------------
-
-Then bad things happen
-============================
-
-.. image:: static/story2.jpg
-
-One of your developers leaks a super privileged access key...
-
-------------------------------
-
-You save the day?
-============================
-
-.. image:: static/story3.jpg
-
-They said give us some money or else.  Boss asks you to clean the account.
-And you do! You even revoked STS Tokens!
-
-
--------------------------------
-
-Attackers end your company
-============================
-
-.. image:: static/story4.jpg
-
-Attackers end your company through a super cool new type of persistence.
-
---------------------------------
-
-Fin
-============================
-
-.. image:: static/story5.jpg
-
-The End
-
-
---------------------------------
-
-So what?
-=================================
-
-Let's look at the MadKing
---------------------------
-
-------------------------------
-
 .. raw:: html
 
     <div id="player-container23"></div>
@@ -1579,25 +1308,6 @@ So what?
 5. No security groups for APIGateway endpoints
 
 -------------------------------
-
-Today's Agenda
-===============
-
-AWS Developments in the Last Year
--------------------------------------
-
-Incident Response within AWS
--------------------------------------
-
-Advanced Attacks and Defenses in AWS
--------------------------------------
-
-*Final Tips & Resources*
--------------------------------------
-
-.. note:: Andrew Speaks
-
--------------------------
 
 How do we even begin to protect ourselves?
 ===========================================
@@ -1654,31 +1364,17 @@ http://www.threatresponse.cloud
 
 ------------------------------
 
-Future Features of Our Tools
-==========================================
-
-.. image:: static/features.png
-    :align: center
-
-------------------------------
-
 Thank Yous and Announcements
 ==========================================
 
 * Amazon Web Services Security
       Don Bailey, Henrik Johansson, Zack Glick
-* DerbyCon Staff
+* BSides PDX Staff
 * Toni De la Fuente
-* Shyla Roach - Illustrations in slides
-* Team Who Couldn't Be with Us Today
+* Team Who Couldn't Be with Us Today ( Alex )
 
 
-------------------------------
+-----------------------------
 
-Don't let me forget to take questions...
-==========================================
-
-------------------------------
-
-Srsly any questions? ...
-==========================================
+Fin
+=======

@@ -69,7 +69,10 @@ xmlns="http://www.w3.org/1999/xhtml">
   <body class="impress-not-supported">
     <div id="fixed-header" class="fixed-header">
       <img class="nav-icon" title="" alt="Threat Response Logo" src="static/tr_logo.png" />
-      <h1 class="nav-title">ThreatResponse @ DerbyCon Recharge</h1>
+      <img class="con-icon" title="" alt="BSides Logo" src="static/bsides_logo.png" />
+      <h1 class="nav-title">ThreatResponse @ BSides PDX</h1>
+
+
     </div>
     <div class="slides">
       <xsl:for-each select="/document">
